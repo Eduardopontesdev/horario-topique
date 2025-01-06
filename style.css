@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: none; 
+    list-style-type: none;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    
+}
+.rota {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+.sabado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.span-chegada {
+    background-color: #270ded;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px 2px;
+    text-align: center;
+
+}
+
+.span-saida {
+    background-color: #059e3a;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px 2px;
+    text-align: center;
+
+}
+
+.container {
+    /* border: 2px solid orange; */
+    max-width: 500px;
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.selecao {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 300px;
+    max-width: 400px;
+    /* border: 2px solid black; */
+}
+
+.selecao select {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 2px;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.selecao select option {
+    border: none;
+    color: #b510cf;
+    font-weight: bold;
+}
+
+.resultado {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.resultado h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.horarios-semana{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border:2px solid #b510cf; */
+    width: 300px;
+
+    
+}
+
+.container-horarios {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 300px;
+}
+
+.saida {
+    border: 2px solid #059e3a;
+   
+}
+
+.saida-dia {
+    border: 1px solid #059e3a;
+    padding: 2px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+
+.chegada {
+    border: 2px solid #270ded;
+}
+
+.chegada-dia {
+    border: 2px solid #270ded;
+    padding: 2px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+
+.chegada-dia {
+    /* border: 2px solid orangered; */
+    padding: 2px;
+    margin: 5px;
+}
+
+.hide {
+    display: none;
+}

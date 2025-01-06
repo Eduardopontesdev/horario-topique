@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Horario de Topic</title>
+</head>
+<body>
+    <main class="container">
+        <div class="selecao" id="selecao">
+            <select name="listaHorarios" id="listaHorarios">
+                <option value="0"   id="option-horario">Selecione a Rota</option>
+            </select>
+        </div>
+        <div  class="resultado hide">
+            <div>
+                <h1 id="rota"></h1>
+            </div>
+            <div class="horarios-semana">
+                <span class="rota">Segunda a Sexta</span>
+                <div class="container-horarios">
+                    
+                    <div class="saida-semana">
+                        <p class="span-saida">saida</p>
+                        <ul class="saida" id="saidaSemana">
+                        </ul>
+                    </div>
+                    <div class="chegada-semana">
+                        <p class="span-chegada">chegada</p>
+                        <ul class="chegada" id="chegadaSemana">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sabado">
+                <span class="rota">Sábado</span>
+                <div class="container-horarios">
+                    <div class="saida-sabado">
+                        <p class="span-saida">saida</p>
+                        <ul class="saida"  id="saidaSabado"></ul>
+                    </div>
+                    <div class="chegada-sabado" >
+                        <p class="span-chegada">chegada</p>
+                        <ul class="chegada" id="chegadaSabado"></ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
