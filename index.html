@@ -7,12 +7,15 @@
     <title>Horario de Topic</title>
 </head>
 <body>
-    <main class="container">
+    <header>
         <div class="selecao" id="selecao">
             <select name="listaHorarios" id="listaHorarios">
                 <option value="0"   id="option-horario">Selecione a Rota</option>
             </select>
         </div>
+    </header>
+    <main class="container">
+        
         <div  class="resultado hide">
             <div>
                 <h1 id="rota"></h1>
@@ -45,6 +48,19 @@
                     <div class="chegada-sabado" >
                         <p class="span-chegada">chegada</p>
                         <ul class="chegada" id="chegadaSabado"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="domingo hide">
+                <span class="rota">Domingo</span>
+                <div class="container-horarios">
+                    <div class="saida-domingo">
+                        <p class="span-saida">saida</p>
+                        <ul class="saida"  id="saidaDomingo"></ul>
+                    </div>
+                    <div class="chegada-domingo" >
+                        <p class="span-chegada">chegada</p>
+                        <ul class="chegada" id="chegadaDomingo"></ul>
                     </div>
                 </div>
             </div>
