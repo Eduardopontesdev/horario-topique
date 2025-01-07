@@ -148,6 +148,14 @@ body {
     margin: 5px;
 }
 
+.valor {
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    color: #059e3a;
+}
+
 .hide {
     display: none;
 }

@@ -6,6 +6,7 @@ const chegadaSabado = document.getElementById("chegadaSabado");
 const rota = document.getElementById("rota");
 const selectHorario = document.getElementById("listaHorarios");
 const optionHorario = document.getElementById("option-horario");
+const valor = document.getElementById("valor");
 const topics = [
   {
     //chaval a camocim
@@ -19,6 +20,7 @@ const topics = [
       saida: ["07:10"],
       chegada: ["08:10"],
     },
+    valor: 14.50
   },
   //camocim a chaval
   {
@@ -32,6 +34,7 @@ const topics = [
       saida: ["11:30"],
       chegada: ["12:30"],
     },
+    valor: 14.50
   },
 ];
 
@@ -55,6 +58,7 @@ function pegaHorario(item) {
     topics.forEach((topic) => {
       if (topic.topic === item) {
         rota.innerHTML = topic.rota;
+        valor.innerHTML = topic.valor.toLocaleString("pt-br", {style:'currency', currency: 'BRL'});
         for (let i = 0; i < topic.segundaasexta.saida.length; i++) {
           const span = document.createElement("li");
           span.className = "saida-dia";
