@@ -9,7 +9,6 @@
 
 body {
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -22,6 +21,34 @@ header {
     align-items: center;
     justify-content: center;
 }
+img {
+    width: 300px;
+}
+.patrocinio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    padding: 0 5px;
+}
+
+.patrocinio p {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    color: #270ded;
+}
+
+.patrocinio span {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    color: #059e3a;
+}
+
 .rota {
     font-size: 18px;
     font-weight: bold;

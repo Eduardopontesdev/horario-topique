@@ -1,4 +1,5 @@
 const seletor = document.querySelector(".resultado");
+const patrocinio = document.querySelector(".patrocinio");
 const domingo = document.querySelector(".domingo");
 const saidaSemana = document.getElementById("saidaSemana");
 const saidaSabado = document.getElementById("saidaSabado");
@@ -98,6 +99,7 @@ function optionHorarios() {
 
 function pegaHorario(item) {
   if (item != 0) {
+    patrocinio.classList.add("hide");
     saidaSemana.innerHTML = "";
     chegadaSemana.innerHTML = "";
     saidaSabado.innerHTML = "";
@@ -156,6 +158,7 @@ function pegaHorario(item) {
     });
   } else {
     seletor.classList.add("hide");
+    patrocinio.classList.remove("hide");
     return;
   }
 }
