@@ -192,13 +192,28 @@ img {
 .hide {
   display: none;
 }
-@media (max-width: 600px) {
-  
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 460px;
+}
+
+.resultado {
+  margin-top: 23px;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .semana {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px;
+  max-width: 400px;
   width: 395px;
 }
 
