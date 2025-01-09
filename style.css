@@ -323,4 +323,7 @@ img {
     border: 2px solid #270ded;
     width: 65px;
   }
+  .hide {
+    display: none;
+  }
 }
