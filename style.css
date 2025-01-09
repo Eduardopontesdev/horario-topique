@@ -376,6 +376,30 @@ img {
     border: 2px solid #270ded;
     width: 65px;
   }
+  .patrocinio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    padding: 0 5px;
+  }
+  
+  .patrocinio p {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    color: #270ded;
+  }
+  
+  .patrocinio span {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    color: #059e3a;
+  }
   .hide {
     display: none;
   }
