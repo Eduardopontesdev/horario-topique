@@ -1,190 +1,311 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    outline: none; 
-    list-style-type: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  outline: none;
+  list-style-type: none;
 }
 
-body {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    overflow: scroll;
-    padding-top: 10px;
-}
 header {
-    position: fixed;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 img {
-    width: 300px;
+  width: 300px;
 }
-.patrocinio {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 500px;
-    padding: 0 5px;
-}
-
-.patrocinio p {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    color: #270ded;
-}
-
-.patrocinio span {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    color: #059e3a;
-}
-
-.rota {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px 0;
-}
-.sabado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.domingo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.span-chegada {
-    background-color: #270ded;
-    font-size: 15px;
-    font-weight: bold;
-    color: #fff;
-    padding: 5px 2px;
-    text-align: center;
-
-}
-
-.span-saida {
-    background-color: #059e3a;
-    font-size: 15px;
-    font-weight: bold;
-    color: #fff;
-    padding: 5px 2px;
-    text-align: center;
-
-}
-
-.container {
-    top: 50px;
-    max-width: 500px;
-}
-
-.selecao {
-    position: fixed;
-    top: 0;
-    text-align: center;
-    margin-top: 10px;
-    width: 300px;
-}
-
-.selecao select {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 2px;
-    outline: none;
-    border-radius: 5px;
-    width: 100%;
-    text-align: center;
-}
-
-.selecao select option {
-    border: none;
-    color: #b510cf;
-    font-weight: bold;
 }
 
 .resultado {
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  margin-top: 23px;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
 }
 
 .resultado h1 {
-    font-size: 25px;
-    text-align: center;
-    margin: 10px 0;
+  font-size: 25px;
+  text-align: center;
+  margin: 10px 0;
 }
 
-.horarios-semana{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* border:2px solid #b510cf; */
-    width: 300px;
+.patrocinio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  padding: 0 5px;
+}
 
-    
+.patrocinio p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: #270ded;
+}
+
+.patrocinio span {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: #059e3a;
+}
+
+.rota {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.semana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 800px;
+}
+
+.sabado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 800px;
+}
+
+.domingo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 800px;
+}
+.span-chegada {
+  background-color: #270ded;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 2px;
+  text-align: center;
+  height: 44px;
+  width: 114px;
+}
+
+.span-saida {
+  background-color: #059e3a;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 10px 2px;
+  text-align: center;
+  height: 40px;
+  width: 114px;
+}
+
+.span-passada {
+  background-color: #026c27;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px 2px;
+  text-align: center;
+  height: 40px;
+  width: 114px;
+}
+
+.selecao {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  margin-top: 10px;
+  width: 300px;
+}
+
+.selecao select {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 2px;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.selecao select option {
+  border: none;
+  color: #b510cf;
+  font-weight: bold;
 }
 
 .container-horarios {
-    font-size: 12px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    width: 300px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .saida {
-    border: 2px solid #059e3a;
-   
+  border: 2px solid #059e3a;
+}
+.chegada {
+  border: 2px solid #270ded;
 }
 
 .saida-dia {
-    border: 2px solid #059e3a;
-    padding: 2px;
-    margin: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    width: 100px;
-    text-align: center;
-}
-
-.chegada {
-    border: 2px solid #270ded;
+  border: 2px solid #059e3a;
+  padding: 2px;
+  margin: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
 }
 
 .chegada-dia {
-    border: 2px solid #270ded;
-    padding: 2px;
-    margin: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    width: 100px;
-    text-align: center;
+  border: 2px solid #270ded;
+  padding: 2px;
+  margin: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
 }
 
 .valor {
-    font-size: 22px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    color: #059e3a;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  color: #059e3a;
 }
 
 .hide {
-    display: none;
+  display: none;
+}
+@media (max-width: 600px) {
+  
+.semana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 395px;
+}
+
+.sabado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 395px;
+}
+
+.domingo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 395px;
+}
+  .rota {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .semana {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+  }
+  
+  .sabado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+  }
+  
+  .domingo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+  }
+  .span-chegada {
+    background-color: #270ded;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    height: 32px;
+    width: 65px;
+  }
+  
+  .span-saida {
+    background-color: #059e3a;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    height: 32px;
+    width: 65px;
+  }
+  
+  .span-passada {
+    background-color: #026c27;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    height: 32px;
+    width: 65px;
+  }
+  .container-horarios {
+    /* font-size: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+  }
+  .saida-dia {
+    border: 2px solid #059e3a;
+    padding: 2px;
+    /* margin: 5px; */
+    font-size: 12px;
+    font-weight: bold;
+    width: 50px;
+    text-align: center;
+  }
+  
+  .chegada-dia {
+    border: 2px solid #270ded;
+    padding: 2px;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    width: 50px;
+    text-align: center;
+  }
+
+  .saida {
+    border: 2px solid #059e3a;
+    width: 65px;
+  }
+  .chegada {
+    border: 2px solid #270ded;
+    width: 65px;
+  }
 }
