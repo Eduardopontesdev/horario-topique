@@ -1,6 +1,7 @@
 const seletor = document.querySelector(".resultado");
 const patrocinio = document.querySelector(".patrocinio");
 const domingo = document.querySelector(".domingo");
+const sabado = document.querySelector(".sabado");
 //onde a topic ira passar / na rota adicional tambem
 const passadaSemanaHide = document.querySelector(".passada-semana");
 const passadaSemanaHide2 = document.querySelector(".passada-semana2");
@@ -56,8 +57,130 @@ const valor = document.getElementById("valor");
 
 const topics = [
   {
-    //chaval a camocim
+    //granja a camocim
     topic: 1,
+    rota: "Granja - Camocim",
+    segundaasexta: {
+      saida: ["05:45", "06:00", "06:20", "06:40", "07:00", "07:20", "07:40", "08:00", "08:20", "08:40", "09:00", "09:20", "09:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00", "12:25", "12:50", "13:15", "13:40", "14:05", "14:30", "14:55", "15:20", "15:45", "16:10", "16:35", "17:00", "17:25", "18:00", ],
+      chegada: ["06:25", "06:40", "07:00", "07:20", "07:40", "08:00", "08:20", "08:40", "09:00", "09:20", "09:40", "10:00", "10:20", "10:40", "11:00", "11:20", "11:40", "12:00", "12:20", "12:40", "13:05", "13:30", "13:55", "14:20", "14:45", "15:10", "15:35", "16:00", "16:25", "16:50", "17:15", "17:40", "18:05", "18:40", ],
+    },
+    sabado: {
+      saida: [],
+      chegada: [],
+    },
+    valor: 7.25,
+    domingo: {
+      saida: [],
+      chegada: [],
+    },
+    rotaadicional: {
+      cidade1: {
+        nome: "",
+        passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+      cidade2: {
+        nome: "",
+        passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+      cidade3: {
+        nome: "",
+        passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+      cidade4: {
+        nome: "",
+        passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+    },
+  },
+  //fim granja a camocim
+  //camocim a granja
+  {
+  topic: 2,
+  rota: "Camocim - Granja",
+  segundaasexta: {
+    saida: ["06:30", "06:45", "07:05", "07:25", "07:45", "08:05", "08:25", "08:45", "09:05", "09:25", "09:45", "10:05", "10:25", "10:45", "11:05", "11:25", "11:45", "12:05", "12:25", "12:45", "13:10", "13:35", "14:00", "14:25", "14:50", "15:15", "15:40", "16:05", "16:30", "16:55", "17:20", "17:45", "18:10", "18:45", ],
+    chegada: ["07:10", "07:25", "07:45", "08:05", "08:25", "08:45", "09:05", "09:25", "09:45", "10:05", "10:25", "10:45", "11:05", "11:25", "11:45", "12:05", "12:25", "12:45", "13:05", "13:25", "13:50", "14:15", "14:40", "15:05", "15:30", "15:55", "16:20", "16:45", "17:10", "17:35", "18:00", "18:25", "18:50", "19:25"],
+  },
+  sabado: {
+    saida: [],
+    chegada: [],
+  },
+  valor: 7.25,
+  domingo: {
+    saida: [],
+    chegada: [],
+  },
+  rotaadicional: {
+    cidade1: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+    cidade2: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+    cidade3: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+    cidade4: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+  },
+},
+//fim camocim a granja
+    //chaval a camocim
+    {
+    topic: 3,
     rota: "Chaval - Camocim",
     segundaasexta: {
       saida: ["06:00", "06:30", "07:00", "09:30", "11:40", "12:50"],
@@ -117,7 +240,7 @@ const topics = [
   },
   //camocim a chaval
   {
-    topic: 2,
+    topic: 4,
     rota: "Camocim - Chaval",
     segundaasexta: {
       saida: ["07:50", "09:50", "10:50", "11:40", "14:30", "16:30"],
@@ -177,7 +300,7 @@ const topics = [
   },
   //barroquinha a camocim
   {
-    topic: 3,
+    topic: 5,
     rota: "Barroquinha - Camocim",
     segundaasexta: {
       saida: [
@@ -261,7 +384,7 @@ const topics = [
   },
   //camocim a barroquinha
   {
-    topic: 4,
+    topic: 6,
     rota: "Camocim - Barroquinha",
     segundaasexta: {
       saida: [
@@ -345,7 +468,7 @@ const topics = [
   },
   //bitupita a camocim
   {
-    topic: 5,
+    topic: 7,
     rota: "Bitupitá - Camocim",
     segundaasexta: {
       saida: ["05:40", "06:40", "07:10", "13:00"],
@@ -405,7 +528,7 @@ const topics = [
   },
   //camocim a bitupita
   {
-    topic: 6,
+    topic: 8,
     rota: "Camocim - Bitupitá",
     segundaasexta: {
       saida: ["10:40", "11:30", "12:40", "16:10"],
@@ -465,7 +588,7 @@ const topics = [
   },
     //camocim a sobral
     {
-      topic: 7,
+      topic: 9,
       rota: "Camocim - Sobral",
       segundaasexta: {
         saida: ["30:30", "05:00", "07:00", "09:00", "11:00", "13:00", "15:00"],
@@ -525,7 +648,7 @@ const topics = [
     },
       //sobral a camocim
   {
-    topic: 8,
+    topic: 10,
     rota: "Sobral - Camocim",
     segundaasexta: {
       saida: ["06:00", "08:00", "11:00", "13:00", "15:00", "17:00", "18:20"],
@@ -637,19 +760,24 @@ function pegaHorario(item) {
           span.innerHTML = topic.segundaasexta.chegada[i];
           chegadaSemana.appendChild(span);
         }
-
-        for (let i = 0; i < topic.sabado.saida.length; i++) {
-          const span = document.createElement("li");
-          span.className = "saida-dia";
-          span.innerHTML = topic.sabado.saida[i];
-          saidaSabado.appendChild(span);
-        }
-        for (let i = 0; i < topic.sabado.chegada.length; i++) {
-          const span = document.createElement("li");
-          span.className = "chegada-dia";
-          span.innerHTML = topic.sabado.chegada[i];
-          chegadaSabado.appendChild(span);
-        }
+if (topic.sabado.saida.length != 0) {
+  sabado.classList.remove("hide");
+  for (let i = 0; i < topic.sabado.saida.length; i++) {
+    const span = document.createElement("li");
+    span.className = "saida-dia";
+    span.innerHTML = topic.sabado.saida[i];
+    saidaSabado.appendChild(span);
+  }
+  for (let i = 0; i < topic.sabado.chegada.length; i++) {
+    const span = document.createElement("li");
+    span.className = "chegada-dia";
+    span.innerHTML = topic.sabado.chegada[i];
+    chegadaSabado.appendChild(span);
+  }
+} else {
+  sabado.classList.add("hide");
+}
+        
         if (topic.domingo.chegada.length != 0) {
           domingo.classList.remove("hide");
           for (let i = 0; i < topic.domingo.saida.length; i++) {
