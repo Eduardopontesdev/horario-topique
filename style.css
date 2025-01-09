@@ -5,6 +5,7 @@
   font-family: sans-serif;
   outline: none;
   list-style-type: none;
+ 
 }
 body {
   display: flex;
@@ -12,6 +13,7 @@ body {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  text-transform: uppercase;
 }
 main {
   width: 100%;
@@ -24,6 +26,13 @@ img {
   justify-content: center;
   align-items: center;
   width: 600px;
+}
+.rota-valor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 10px;
 }
 .container {
   display: flex;
@@ -70,7 +79,7 @@ img {
 }
 
 .rota {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   margin: 5px 0;
@@ -305,31 +314,31 @@ img {
   }
   .span-chegada {
     background-color: #270ded;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: bold;
     color: #fff;
     text-align: center;
-    height: 32px;
+    height: 26px;
     width: 65px;
   }
 
   .span-saida {
     background-color: #059e3a;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: bold;
     color: #fff;
     text-align: center;
-    height: 32px;
+    height: 26px;
     width: 65px;
   }
 
   .span-passada {
     background-color: #026c27;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: bold;
     color: #fff;
     text-align: center;
-    height: 32px;
+    height: 26px;
     width: 65px;
   }
   .container-horarios {
