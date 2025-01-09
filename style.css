@@ -6,19 +6,29 @@
   outline: none;
   list-style-type: none;
 }
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+main {
+  width: 100%;
 }
 img {
   width: 300px;
 }
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+}
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .resultado {
@@ -193,66 +203,100 @@ img {
   display: none;
 }
 @media (max-width: 768px) {
+  body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main {
+    width: 450px;
+  }
+
+  .selecao {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    margin-top: 10px;
+    width: 300px;
+  }
+  
+  .selecao select {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 2px;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .selecao select option {
+    border: none;
+    color: #b510cf;
+    font-weight: bold;
+  }
+
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 460px;
-}
+  }
 
-.resultado {
-  margin-top: 23px;
-  width: 100%;
-  max-width: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.semana {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  width: 395px;
-}
+  .resultado {
+    margin-top: 23px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .semana {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 395px;
+  }
 
-.sabado {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px;
-  width: 395px;
-}
+  .sabado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 395px;
+  }
 
-.domingo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px;
-  width: 395px;
-}
+  .domingo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    width: 395px;
+  }
   .rota {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     margin: 5px 0;
   }
-  
+
   .semana {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 800px;
   }
-  
+
   .sabado {
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 800px;
   }
-  
+
   .domingo {
     display: flex;
     flex-direction: column;
@@ -268,7 +312,7 @@ img {
     height: 32px;
     width: 65px;
   }
-  
+
   .span-saida {
     background-color: #059e3a;
     font-size: 10px;
@@ -278,7 +322,7 @@ img {
     height: 32px;
     width: 65px;
   }
-  
+
   .span-passada {
     background-color: #026c27;
     font-size: 10px;
@@ -304,7 +348,7 @@ img {
     width: 50px;
     text-align: center;
   }
-  
+
   .chegada-dia {
     border: 2px solid #270ded;
     padding: 2px;
