@@ -380,10 +380,10 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     height: 500px;
-    width: 400px;
-    padding: 0 5px;
+    width: 300px;
+    padding: 0 10px;
   }
   
   .patrocinio p {
