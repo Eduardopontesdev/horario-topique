@@ -110,10 +110,10 @@ img {
 }
 .span-chegada {
   background-color: #270ded;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   color: #fff;
-  padding: 10px 2px;
+  padding: 10px;
   text-align: center;
   height: 44px;
   width: 114px;
@@ -121,23 +121,23 @@ img {
 
 .span-saida {
   background-color: #059e3a;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   color: #fff;
-  padding: 10px 2px;
+  padding: 10px;
   text-align: center;
-  height: 40px;
+  height: 44px;
   width: 114px;
 }
 
 .span-passada {
   background-color: #026c27;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   color: #fff;
-  padding: 5px 2px;
+  padding: 10px;
   text-align: center;
-  height: 40px;
+  height: 44px;
   width: 114px;
 }
 
@@ -318,7 +318,7 @@ img {
     font-weight: bold;
     color: #fff;
     text-align: center;
-    height: 26px;
+    height: 36px;
     width: 65px;
   }
 
@@ -328,7 +328,7 @@ img {
     font-weight: bold;
     color: #fff;
     text-align: center;
-    height: 26px;
+    height: 36px;
     width: 65px;
   }
 
@@ -338,8 +338,10 @@ img {
     font-weight: bold;
     color: #fff;
     text-align: center;
-    height: 26px;
+    padding-left: 2px;
+    height: 36px;
     width: 65px;
+    
   }
   .container-horarios {
     /* font-size: 10px; */
@@ -351,7 +353,7 @@ img {
   .saida-dia {
     border: 2px solid #059e3a;
     padding: 2px;
-    /* margin: 5px; */
+    margin: 5px;
     font-size: 12px;
     font-weight: bold;
     width: 50px;
