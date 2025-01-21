@@ -1906,6 +1906,7 @@ function pegaHorario(item) {
   } else {
     seletor.classList.add("hide");
     patrocinio.classList.remove("hide");
+    main.classList.add("hide");
   }
 }
 
