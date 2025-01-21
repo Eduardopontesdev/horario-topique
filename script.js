@@ -2007,7 +2007,7 @@ function checaRotaAdicionalDomingo(dado1, dado2, dado3, topic) {
 
 //enviar contato no whatsapp
 function enviaMensagem() {
-  const texto = "olá, tenho entenresse me patrocinar";
+  const texto = "olá, tenho interesse em patrocinar o projeto.";
   const fone = "+5588996328842";
   const message = encodeURIComponent(texto);
 
