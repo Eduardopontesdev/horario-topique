@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif; /* Use a modern font like Montserrat */
+  font-family: 'Montserrat', sans-serif;
   outline: none;
   list-style-type: none;
 }
@@ -11,18 +11,17 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh; /* Make the body fill the viewport height */
-  background-color: #f4f4f4; /* Light gray background */
-  color: #333; /* Darker text color */
+  min-height: 100vh; 
+  background-color: #f4f4f4; 
+  color: #333; 
 }
 
 main {
   width: 100%;
-  max-width: 800px; /* Limit the width for better readability */
-  padding: 20px;
+  max-width: 800px; 
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
-  background-color: #fff; /* White background for the main content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: #fff; 
 }
 
 img {
@@ -34,13 +33,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .rota-valor {
   display: flex;
-  justify-content: space-between; /* Space between rota and valor */
-  align-items: center;
+  justify-content: center; 
 }
 
 .rota-valor h1 {
@@ -51,13 +48,9 @@ img {
 
 .rota-valor .valor {
   font-size: 24px;
-  color: #009688; /* Green for valor */
+  color: #009688;
+  padding: 12px;
 }
-
-/* .resultado {
-  margin-top: 20px;
-  padding: 20px;
-} */
 
 .resultado h1 {
   font-size: 22px;
@@ -71,7 +64,7 @@ img {
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  border-top: 1px solid #ddd; /* Light gray border */
+  border-top: 1px solid #ddd; 
   margin-top: 20px;
 }
 
@@ -85,7 +78,7 @@ img {
 .patrocinio span {
   font-size: 22px;
   font-weight: bold;
-  color: #009688; /* Green for phone number */
+  color: #009688; 
   margin-top: 10px;
   cursor: pointer;
 }
@@ -119,40 +112,40 @@ img {
 }
 
 .span-chegada {
-  background-color: #2196F3; /* Blue for chegada */
+  background-color: #2196F3; 
   color: #fff;
 }
 
 .span-saida {
-  background-color: #4CAF50; /* Green for saida */
+  background-color: #4CAF50; 
   color: #fff;
 }
 
 .span-passada {
-  background-color: #FFC107; /* Yellow for passada */
+  background-color: #FFC107; 
   color: #333;
 }
 
 .selecao {
-  position: relative; /* Use relative positioning instead of fixed */
+  position: relative; 
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
 }
 
 .selecao select {
   font-size: 18px;
-  padding: 10px 20px;
+  padding: 10px 6px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  appearance: none; /* Remove default arrow */
-  -webkit-appearance: none; /* For Safari */
-  background-position: right 10px center; /* Position the arrow */
+  appearance: none; 
+  -webkit-appearance: none; 
+  background-position: right 10px center; 
 }
 
 .container-horarios {
   font-size: 14px;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap; 
   justify-content: center;
   gap: 2px;
 }
@@ -194,16 +187,16 @@ img {
   }
 
   .span-chegada,
-.span-saida,
-.span-passada {
-  font-size: 9px;
-  margin: 0;
-  height: 35px;
-  width: 60px;
-  flex-direction: column;
-}
+  .span-saida,
+  .span-passada {
+    font-size: 9px;
+    margin: 0;
+    height: 35px;
+    width: 60px;
+    flex-direction: column;
+  }
 
-.hide {
-  display: none;
-}
+  .hide {
+    display: none;
+  }
 }
