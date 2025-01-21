@@ -7,6 +7,7 @@ const chegadaRotaD = document.getElementById("chegada-rota-d");
 
 const seletor = document.querySelector(".resultado");
 const patrocinio = document.querySelector(".patrocinio");
+const main = document.querySelector(".main");
 const domingo = document.querySelector(".domingo");
 const sabado = document.querySelector(".sabado");
 //onde a topic ira passar / na rota adicional tambem
@@ -1048,14 +1049,66 @@ const topics = [
     saidarota: "Preá",
     chegadarota: "Camocim",
     segundaasexta: {
-      saida: ["05:00", "06:00", "07:00", "08:15", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:00"],
-      chegada: ["07:30", "08:30", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:15", "19:30", "20:30"],
+      saida: [
+        "05:00",
+        "06:00",
+        "07:00",
+        "08:15",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:00",
+      ],
+      chegada: [
+        "07:30",
+        "08:30",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:15",
+        "19:30",
+        "20:30",
+      ],
     },
     sabado: {
       saidarota: "Preá",
       chegadarota: "Camocim",
-      saida: ["05:00", "06:00", "07:00", "08:15", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:00"],
-      chegada: ["07:30", "08:30", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:15", "19:30", "20:30"],
+      saida: [
+        "05:00",
+        "06:00",
+        "07:00",
+        "08:15",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:00",
+      ],
+      chegada: [
+        "07:30",
+        "08:30",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:15",
+        "19:30",
+        "20:30",
+      ],
     },
     valor: 29,
     domingo: {
@@ -1079,22 +1132,22 @@ const topics = [
           "15:15",
           "16:30",
           "17:45",
-          "18:45"
+          "18:45",
         ],
         sabado: {
           passada: [
             "05:45",
-          "06:45",
-          "07:45",
-          "09:00",
-          "10:15",
-          "11:30",
-          "12:45",
-          "14:00",
-          "15:15",
-          "16:30",
-          "17:45",
-          "18:45"
+            "06:45",
+            "07:45",
+            "09:00",
+            "10:15",
+            "11:30",
+            "12:45",
+            "14:00",
+            "15:15",
+            "16:30",
+            "17:45",
+            "18:45",
           ],
         },
         domingo: {
@@ -1115,22 +1168,22 @@ const topics = [
           "15:45",
           "17:00",
           "18:15",
-          "19:15"
+          "19:15",
         ],
         sabado: {
           passada: [
             "06:15",
-          "07:15",
-          "08:15",
-          "09:30",
-          "10:45",
-          "12:00",
-          "13:15",
-          "14:30",
-          "15:45",
-          "17:00",
-          "18:15",
-          "19:15"
+            "07:15",
+            "08:15",
+            "09:30",
+            "10:45",
+            "12:00",
+            "13:15",
+            "14:30",
+            "15:45",
+            "17:00",
+            "18:15",
+            "19:15",
           ],
         },
         domingo: {
@@ -1151,22 +1204,22 @@ const topics = [
           "16:20",
           "17:35",
           "18:50",
-          "19:50"
+          "19:50",
         ],
         sabado: {
           passada: [
             "06:50",
-          "07:50",
-          "08:50",
-          "10:05",
-          "11:20",
-          "12:35",
-          "13:50",
-          "15:05",
-          "16:20",
-          "17:35",
-          "18:50",
-          "19:50"
+            "07:50",
+            "08:50",
+            "10:05",
+            "11:20",
+            "12:35",
+            "13:50",
+            "15:05",
+            "16:20",
+            "17:35",
+            "18:50",
+            "19:50",
           ],
         },
         domingo: {
@@ -1192,14 +1245,66 @@ const topics = [
     saidarota: "Camocim",
     chegadarota: "Preá",
     segundaasexta: {
-      saida: ["05:00", "06:00", "07:00", "08:15", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:00"],
-      chegada: ["07:30", "08:30", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:15", "19:30", "20:30"],
+      saida: [
+        "05:00",
+        "06:00",
+        "07:00",
+        "08:15",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:00",
+      ],
+      chegada: [
+        "07:30",
+        "08:30",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:15",
+        "19:30",
+        "20:30",
+      ],
     },
     sabado: {
       saidarota: "Camocim",
       chegadarota: "Preá",
-      saida: ["05:00", "06:00", "07:00", "08:15", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:00"],
-      chegada: ["07:30", "08:30", "09:30", "10:45", "12:00", "13:15", "14:30", "15:45", "17:00", "18:15", "19:30", "20:30"],
+      saida: [
+        "05:00",
+        "06:00",
+        "07:00",
+        "08:15",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:00",
+      ],
+      chegada: [
+        "07:30",
+        "08:30",
+        "09:30",
+        "10:45",
+        "12:00",
+        "13:15",
+        "14:30",
+        "15:45",
+        "17:00",
+        "18:15",
+        "19:30",
+        "20:30",
+      ],
     },
     valor: 29,
     domingo: {
@@ -1223,22 +1328,22 @@ const topics = [
           "15:10",
           "16:25",
           "17:40",
-          "18:40"
+          "18:40",
         ],
         sabado: {
           passada: [
-          "05:40",
-          "06:40",
-          "07:40",
-          "08:55",
-          "10:10",
-          "11:25",
-          "12:40",
-          "13:55",
-          "15:10",
-          "16:25",
-          "17:40",
-          "18:40"
+            "05:40",
+            "06:40",
+            "07:40",
+            "08:55",
+            "10:10",
+            "11:25",
+            "12:40",
+            "13:55",
+            "15:10",
+            "16:25",
+            "17:40",
+            "18:40",
           ],
         },
         domingo: {
@@ -1259,22 +1364,22 @@ const topics = [
           "15:45",
           "17:00",
           "18:15",
-          "19:15"
+          "19:15",
         ],
         sabado: {
           passada: [
-          "06:15",
-          "07:15",
-          "08:15",
-          "09:30",
-          "10:45",
-          "12:00",
-          "13:15",
-          "14:30",
-          "15:45",
-          "17:00",
-          "18:15",
-          "19:15"
+            "06:15",
+            "07:15",
+            "08:15",
+            "09:30",
+            "10:45",
+            "12:00",
+            "13:15",
+            "14:30",
+            "15:45",
+            "17:00",
+            "18:15",
+            "19:15",
           ],
         },
         domingo: {
@@ -1295,22 +1400,22 @@ const topics = [
           "16:15",
           "17:30",
           "18:45",
-          "19:45"
+          "19:45",
         ],
         sabado: {
           passada: [
-          "06:45",
-          "07:45",
-          "08:45",
-          "10:00",
-          "11:15",
-          "12:30",
-          "13:45",
-          "15:00",
-          "16:15",
-          "17:30",
-          "18:45",
-          "19:45"
+            "06:45",
+            "07:45",
+            "08:45",
+            "10:00",
+            "11:15",
+            "12:30",
+            "13:45",
+            "15:00",
+            "16:15",
+            "17:30",
+            "18:45",
+            "19:45",
           ],
         },
         domingo: {
@@ -1462,139 +1567,139 @@ const topics = [
       },
     },
   },
-//camocim a tiangua
-{
-  topic: 15,
-  rota: "Camocim - Tianguá",
-  saidarota: "Camocim",
-  chegadarota: "Tianguá",
-  segundaasexta: {
-    saida: ["05:45", "10:05"],
-    chegada: ["09:00", "13:15"],
-  },
-  sabado: {
+  //camocim a tiangua
+  {
+    topic: 15,
+    rota: "Camocim - Tianguá",
     saidarota: "Camocim",
     chegadarota: "Tianguá",
-    saida: ["05:45", "10:05"],
-    chegada: ["09:00", "13:15"],
-  },
-  valor: 34.8,
-  domingo: {
-    saidarota: "Camocim",
-    chegadarota: "Tianguá",
-    saida: [],
-    chegada: [],
-  },
-  rotaadicional: {
-    cidade1: {
-      nome: "Santa Terezinha",
-      passada: ["07:00", "11:20"],
-      sabado: {
+    segundaasexta: {
+      saida: ["05:45", "10:05"],
+      chegada: ["09:00", "13:15"],
+    },
+    sabado: {
+      saidarota: "Camocim",
+      chegadarota: "Tianguá",
+      saida: ["05:45", "10:05"],
+      chegada: ["09:00", "13:15"],
+    },
+    valor: 34.8,
+    domingo: {
+      saidarota: "Camocim",
+      chegadarota: "Tianguá",
+      saida: [],
+      chegada: [],
+    },
+    rotaadicional: {
+      cidade1: {
+        nome: "Santa Terezinha",
         passada: ["07:00", "11:20"],
+        sabado: {
+          passada: ["07:00", "11:20"],
+        },
+        domingo: {
+          passada: [],
+        },
       },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade2: {
-      nome: "Viçosa",
-      passada: ["08:20", "12:40"],
-      sabado: {
+      cidade2: {
+        nome: "Viçosa",
         passada: ["08:20", "12:40"],
+        sabado: {
+          passada: ["08:20", "12:40"],
+        },
+        domingo: {
+          passada: [],
+        },
       },
-      domingo: {
+      cidade3: {
+        nome: "",
         passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
       },
-    },
-    cidade3: {
-      nome: "",
-      passada: [],
-      sabado: {
+      cidade4: {
+        nome: "",
         passada: [],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade4: {
-      nome: "",
-      passada: [],
-      sabado: {
-        passada: [],
-      },
-      domingo: {
-        passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
       },
     },
   },
-},
-//Tianguá a Camocicm
-{
-  topic: 16,
-  rota: "Tianguá - Camocim",
-  saidarota: "Tianguá",
-  chegadarota: "Camocim",
-  segundaasexta: {
-    saida: ["06:00", "15:00"],
-    chegada: ["09:15", "18:15"],
-  },
-  sabado: {
+  //Tianguá a Camocicm
+  {
+    topic: 16,
+    rota: "Tianguá - Camocim",
     saidarota: "Tianguá",
     chegadarota: "Camocim",
-    saida: ["06:00", "12:00"],
-    chegada: ["09:15", "15:15"],
+    segundaasexta: {
+      saida: ["06:00", "15:00"],
+      chegada: ["09:15", "18:15"],
+    },
+    sabado: {
+      saidarota: "Tianguá",
+      chegadarota: "Camocim",
+      saida: ["06:00", "12:00"],
+      chegada: ["09:15", "15:15"],
+    },
+    valor: 34.8,
+    domingo: {
+      saidarota: "Tianguá",
+      chegadarota: "Camocim",
+      saida: [],
+      chegada: [],
+    },
+    rotaadicional: {
+      cidade1: {
+        nome: "Viçosa",
+        passada: ["06:40", "15:40"],
+        sabado: {
+          passada: ["06:40", "12:40"],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+      cidade2: {
+        nome: "Santa Terezinha",
+        passada: ["07:50", "16:50"],
+        sabado: {
+          passada: ["07:50", "13:50"],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+      cidade3: {
+        nome: "",
+        passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+      cidade4: {
+        nome: "",
+        passada: [],
+        sabado: {
+          passada: [],
+        },
+        domingo: {
+          passada: [],
+        },
+      },
+    },
   },
-  valor: 34.8,
-  domingo: {
-    saidarota: "Tianguá",
-    chegadarota: "Camocim",
-    saida: [],
-    chegada: [],
-  },
-  rotaadicional: {
-    cidade1: {
-      nome: "Viçosa",
-      passada: ["06:40", "15:40"],
-      sabado: {
-        passada: ["06:40", "12:40"],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade2: {
-      nome: "Santa Terezinha",
-      passada: ["07:50", "16:50"],
-      sabado: {
-        passada: ["07:50", "13:50"],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade3: {
-      nome: "",
-      passada: [],
-      sabado: {
-        passada: [],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade4: {
-      nome: "",
-      passada: [],
-      sabado: {
-        passada: [],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-  },
-},
-//outra rota
+  //outra rota
 ];
 
 function optionHorarios() {
@@ -1610,6 +1715,7 @@ function optionHorarios() {
 function pegaHorario(item) {
   if (item != 0) {
     patrocinio.classList.add("hide");
+    main.classList.remove("hide");
     saidaSemana.innerHTML = "";
     chegadaSemana.innerHTML = "";
     saidaSabado.innerHTML = "";
@@ -1896,4 +2002,13 @@ function checaRotaAdicionalDomingo(dado1, dado2, dado3, topic) {
     span.innerHTML = topic.domingo.passada[i];
     dado3.appendChild(span);
   }
+}
+
+//enviar contato no whatsapp
+function enviaMensagem() {
+  const texto = "olá, tenho entenresse me patrocinar";
+  const fone = "+5588996328842";
+  const message = encodeURIComponent(texto);
+
+  window.open(`https://wa.me/${fone}?text=${message}`, "_blank");
 }

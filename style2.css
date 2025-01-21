@@ -1,0 +1,410 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: none;
+    list-style-type: none;
+   
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-transform: uppercase;
+  }
+  main {
+    width: 100%;
+  }
+  img {
+    width: 300px;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+  }
+  .rota-valor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .resultado {
+    margin-top: 23px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .resultado h1 {
+    font-size: 25px;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .patrocinio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    padding: 0 5px;
+  }
+  
+  .patrocinio p {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    color: #270ded;
+  }
+  
+  .patrocinio span {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    color: #059e3a;
+  }
+  
+  .rota {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .semana {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    width: 800px;
+  }
+  
+  .sabado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    width: 800px;
+  }
+  
+  .domingo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    width: 800px;
+  }
+  .span-chegada {
+    background-color: #270ded;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 55px;
+    width: 114px;
+  }
+  
+  .span-saida {
+    background-color: #059e3a;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 55px;
+    width: 114px;
+  }
+  
+  .span-passada {
+    background-color: #026c27;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 55px;
+    width: 114px;
+  }
+  
+  .selecao {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    margin-top: 10px;
+    width: 300px;
+  }
+  
+  .selecao select {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 2px;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .selecao select option {
+    border: none;
+    color: #b510cf;
+    font-weight: bold;
+  }
+  
+  .container-horarios {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .saida {
+    border: 2px solid #059e3a;
+  }
+  .chegada {
+    border: 2px solid #270ded;
+  }
+  
+  .saida-dia {
+    border: 2px solid #059e3a;
+    padding: 2px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+  }
+  
+  .chegada-dia {
+    border: 2px solid #270ded;
+    padding: 2px;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+  }
+  
+  .valor {
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    color: #059e3a;
+  }
+  
+  .hide {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    body {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    main {
+      width: 450px;
+    }
+  
+    .selecao {
+      position: fixed;
+      top: 0;
+      text-align: center;
+      margin-top: 10px;
+      width: 300px;
+    }
+    
+    .selecao select {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 2px;
+      outline: none;
+      border-radius: 5px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .selecao select option {
+      border: none;
+      color: #b510cf;
+      font-weight: bold;
+    }
+  
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 460px;
+    }
+  
+    .resultado {
+      margin-top: 23px;
+      width: 100%;
+      max-width: 450px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .semana {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      width: 395px;
+    }
+  
+    .sabado {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      width: 395px;
+    }
+  
+    .domingo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      width: 395px;
+    }
+    .rota {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin: 5px 0;
+    }
+  
+    .semana {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+    }
+  
+    .sabado {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+    }
+  
+    .domingo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+    }
+    .span-chegada {
+      background-color: #270ded;
+      font-size: 8px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      height: 36px;
+      width: 73px;
+    }
+  
+    .span-saida {
+      background-color: #059e3a;
+      font-size: 8px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      height: 36px;
+      width: 73px;
+    }
+  
+    .span-passada {
+      background-color: #026c27;
+      font-size: 8px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      padding-left: 0 auto;
+      height: 36px;
+      width: 73px;
+      
+    }
+    .container-horarios {
+      /* font-size: 10px; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+    }
+    .saida-dia {
+      border: 2px solid #059e3a;
+      margin: 7px;
+      font-size: 17px;
+      font-weight: bold;
+      width: 55px;
+      text-align: center;
+    }
+  
+    .chegada-dia {
+      border: 2px solid #270ded;
+      margin: 7px;
+      font-size: 17px;
+      font-weight: bold;
+      width: 55px;
+      text-align: center;
+    }
+  
+    .saida {
+      border: 2px solid #059e3a;
+      width: 73px;
+    }
+    .chegada {
+      border: 2px solid #270ded;
+      width: 73px;
+    }
+    .patrocinio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 300px;
+      margin-top: 40px;
+      padding: 0 10px;
+     
+    }
+    
+    .patrocinio p {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 40px;
+      color: #270ded;
+    }
+    
+    .patrocinio span {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 40px;
+      color: #059e3a;
+    }
+    .hide {
+      display: none;
+    }
+  }
+  
