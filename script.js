@@ -64,6 +64,15 @@ const selectHorario = document.getElementById("listaHorarios");
 const optionHorario = document.getElementById("option-horario");
 const valor = document.getElementById("valor");
 
+const dataPatrocinio = [
+  {
+    nome: "topassageiros",
+    plano: "exclusivo",
+    datainicio: "22/01/2025",
+    datafinal: "22/02/2025"
+  }
+]
+
 const imagensPatrocinador = [
   "./src/patrocinador-1.png",
   "./src/patrocinador-2.png",
@@ -2028,4 +2037,4 @@ function mudaImagem() {
   imagemAtual = (imagemAtual + 1) % imagensPatrocinador.length;
 }
 
-setInterval(mudaImagem, 5000);
+setInterval(mudaImagem, 8000);
