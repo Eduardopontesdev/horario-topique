@@ -147,6 +147,7 @@ img {
   appearance: none; 
   -webkit-appearance: none; 
   background-position: right 10px center; 
+  background-color: #fff;
 }
 
 .container-horarios {
