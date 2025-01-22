@@ -81,8 +81,8 @@ img {
 
 
 .patrocinio img {
-  height: 430px;
-  width: 290px;
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
   margin-top: 5px;
   cursor: pointer;
@@ -170,6 +170,10 @@ img {
   border-radius: 3px;
   margin: 5px;
   font-weight: bold;
+}
+
+.clique-aqui {
+  font-size: 2px;
 }
 
 .hide {

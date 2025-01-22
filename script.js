@@ -1,3 +1,4 @@
+const imgPatrocinador = document.getElementById("img-patrocinador");
 const saidaRota = document.getElementById("saida-rota");
 const saidaRotaS = document.getElementById("saida-rota-s");
 const saidaRotaD = document.getElementById("saida-rota-d");
@@ -62,6 +63,14 @@ const rota = document.getElementById("rota");
 const selectHorario = document.getElementById("listaHorarios");
 const optionHorario = document.getElementById("option-horario");
 const valor = document.getElementById("valor");
+
+const imagensPatrocinador = [
+  "./src/patrocinador-1.png",
+  "./src/patrocinador-2.png",
+  "./src/patrocinador-3.png",
+];
+
+let imagemAtual = 0;
 
 const topics = [
   {
@@ -2013,3 +2022,10 @@ function enviaMensagem() {
 
   window.open(`https://wa.me/${fone}?text=${message}`, "_blank");
 }
+
+function mudaImagem() {
+  imgPatrocinador.src = imagensPatrocinador[imagemAtual];
+  imagemAtual = (imagemAtual + 1) % imagensPatrocinador.length;
+}
+
+setInterval(mudaImagem, 5000);
