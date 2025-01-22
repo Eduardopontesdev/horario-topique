@@ -141,6 +141,7 @@ img {
 .selecao select {
   font-size: 18px;
   padding: 10px 6px;
+  margin-top: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   appearance: none; 
