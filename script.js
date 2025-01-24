@@ -1799,8 +1799,8 @@ const topics = [
   sabado: {
     saidarota: "Camocim",
     chegadarota: "Parnaiba",
-    saida: ["12:30"],
-    chegada: ["14:30"],
+    saida: ["12:00"],
+    chegada: ["14:00"],
   },
   valor: 45,
   domingo: {
