@@ -1717,7 +1717,142 @@ const topics = [
       },
     },
   },
-  //outra rota
+   //camocim a parnaiba
+   {
+   topic: 17,
+   rota: "Camocim - Parnaiba",
+   saidarota: "Camocim",
+   chegadarota: "Parnaiba",
+   segundaasexta: {
+     saida: [
+       "08:30"
+     ],
+     chegada: ["10:30"],
+   },
+   sabado: {
+     saidarota: "Camocim",
+     chegadarota: "Parnaiba",
+     saida: ["08:30"],
+     chegada: ["10:30"],
+   },
+   valor: 45,
+   domingo: {
+     saidarota: "Camocim",
+     chegadarota: "Parnaiba",
+     saida: [],
+     chegada: [],
+   },
+   rotaadicional: {
+     cidade1: {
+       nome: "",
+       passada: [],
+       sabado: {
+         passada: [],
+       },
+       domingo: {
+         passada: [],
+       },
+     },
+     cidade2: {
+       nome: "",
+       passada: [],
+       sabado: {
+         passada: [],
+       },
+       domingo: {
+         passada: [],
+       },
+     },
+     cidade3: {
+       nome: "",
+       passada: [],
+       sabado: {
+         passada: [],
+       },
+       domingo: {
+         passada: [],
+       },
+     },
+     cidade4: {
+       nome: "",
+       passada: [],
+       sabado: {
+         passada: [],
+       },
+       domingo: {
+         passada: [],
+       },
+     },
+   },
+ },
+ //fim camocim a parnaiba
+ //parnaiba a camocim
+ {
+  topic: 18,
+  rota: "Parnaiba - Camocim",
+  saidarota: "Parnaiba",
+  chegadarota: "Camocim",
+  segundaasexta: {
+    saida: ["12:30"],
+    chegada: ["14:30"],
+  },
+  sabado: {
+    saidarota: "Camocim",
+    chegadarota: "Parnaiba",
+    saida: ["12:30"],
+    chegada: ["14:30"],
+  },
+  valor: 45,
+  domingo: {
+    saidarota: "Camocim",
+    chegadarota: "Parnaiba",
+    saida: [],
+    chegada: [],
+  },
+  rotaadicional: {
+    cidade1: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+    cidade2: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+    cidade3: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+    cidade4: {
+      nome: "",
+      passada: [],
+      sabado: {
+        passada: [],
+      },
+      domingo: {
+        passada: [],
+      },
+    },
+  },
+},
+//fim parnaiba a camocim
 ];
 
 function optionHorarios() {
