@@ -168,7 +168,7 @@ const topics = [
       saida: [],
       chegada: [],
     },
-    valor: 7.25,
+    valor: 7.45,
     domingo: {
       saidarota: "Granja",
       chegadarota: "Camocim",
@@ -305,7 +305,7 @@ const topics = [
       saida: [],
       chegada: [],
     },
-    valor: 7.25,
+    valor: 7.45,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Granja",
@@ -372,7 +372,7 @@ const topics = [
       saida: ["07:10"],
       chegada: ["08:10"],
     },
-    valor: 14.5,
+    valor: 14.95,
     domingo: {
       saidarota: "Chaval",
       chegadarota: "Camocim",
@@ -438,7 +438,7 @@ const topics = [
       saida: ["11:30"],
       chegada: ["12:30"],
     },
-    valor: 14.5,
+    valor: 14.95,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Chaval",
@@ -528,7 +528,7 @@ const topics = [
       saida: ["06:15", "07:15", "08:15", "10:30", "12:50", "16:50"],
       chegada: ["07:00", "08:00", "09:00", "11:20", "13:40", "17:40"],
     },
-    valor: 10.9,
+    valor: 11.20,
     domingo: {
       saidarota: "Barroquinha",
       chegadarota: "Camocim",
@@ -618,7 +618,7 @@ const topics = [
       saida: ["08:15", "09:40", "11:00", "12:50", "14:30", "18:00"],
       chegada: ["09:00", "10:30", "11:50", "13:40", "15:20", "18:50"],
     },
-    valor: 10.9,
+    valor: 11.20,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Barroquinha",
@@ -684,7 +684,7 @@ const topics = [
       saida: ["06:40"],
       chegada: ["07:55"],
     },
-    valor: 18.5,
+    valor: 19.1,
     domingo: {
       saidarota: "Bitupitá",
       chegadarota: "Camocim",
@@ -750,7 +750,7 @@ const topics = [
       saida: ["11:20"],
       chegada: ["12:40"],
     },
-    valor: 18.5,
+    valor: 19.10,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Bitupitá",
@@ -816,7 +816,7 @@ const topics = [
       saida: ["03:30", "05:00", "07:00", "09:00", "11:00", "13:00", "15:00"],
       chegada: ["06:00", "07:30", "09:30", "11:30", "13:30", "15:30", "17:30"],
     },
-    valor: 36.95,
+    valor: 38.10,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Sobral",
@@ -946,7 +946,7 @@ const topics = [
       saida: ["06:00", "08:00", "11:00", "13:00", "15:00", "17:00", "18:20"],
       chegada: ["08:30", "10:30", "13:30", "15:30", "17:30", "19:30", "20:50"],
     },
-    valor: 36.95,
+    valor: 38.10,
     domingo: {
       saidarota: "Sobral",
       chegadarota: "Camocim",
@@ -1128,7 +1128,7 @@ const topics = [
         "20:30",
       ],
     },
-    valor: 29,
+    valor: 29.75,
     domingo: {
       saidarota: "Preá",
       chegadarota: "Camocim",
@@ -1324,7 +1324,7 @@ const topics = [
         "20:30",
       ],
     },
-    valor: 29,
+    valor: 29.75,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Preá",
@@ -1469,7 +1469,7 @@ const topics = [
       saida: [],
       chegada: [],
     },
-    valor: 18.5,
+    valor: 19.10,
     domingo: {
       saidarota: "Araras",
       chegadarota: "Camocim",
@@ -1535,7 +1535,7 @@ const topics = [
       saida: [],
       chegada: [],
     },
-    valor: 18.5,
+    valor: 19.10,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Araras",
@@ -1601,7 +1601,7 @@ const topics = [
       saida: ["05:45", "10:05"],
       chegada: ["09:00", "13:15"],
     },
-    valor: 34.8,
+    valor: 35.90,
     domingo: {
       saidarota: "Camocim",
       chegadarota: "Tianguá",
@@ -1667,7 +1667,7 @@ const topics = [
       saida: ["06:00", "12:00"],
       chegada: ["09:15", "15:15"],
     },
-    valor: 34.8,
+    valor: 35.90,
     domingo: {
       saidarota: "Tianguá",
       chegadarota: "Camocim",
