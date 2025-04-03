@@ -63,7 +63,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 2px;
   border-top: 1px solid #ddd; 
 }
 
@@ -133,21 +133,57 @@ img {
 }
 
 .selecao {
-  position: relative; 
-  text-align: center;
-  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.selecao select {
-  font-size: 18px;
-  padding: 10px 6px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
+nav {
+  position: relative; 
+  text-align: center;
+  /* margin-bottom: 6px; */
+  margin: 0 2px;
+}
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  
+}
+
+nav li {
+  font-size: 22px;
+  margin: 2px 2px;
+  /* padding: 10px 6px; */
+  /* margin-top: 10px; */
+  /* border: 1px solid #ccc; */
   border-radius: 4px;
   appearance: none; 
   -webkit-appearance: none; 
-  background-position: right 10px center; 
+  /* background-position: right 10px center;  */
   background-color: #fff;
+}
+
+#button   {
+  position: relative;
+  font-size: 22px;
+  /* top: 10px; */
+  /* right: 10px;' */
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: #ffea07;
+}
+
+#button:active {
+  background-color: #ffea07;
 }
 
 .container-horarios {
@@ -186,6 +222,19 @@ img {
 @media (max-width: 768px) {
   main {
     width: 90%;
+  }
+
+  nav ul {
+    grid-template-columns: repeat(3, 1fr);
+    
+  }
+
+  #button{
+    font-size: 15px;
+  }
+
+  .patrocinio img {
+    height: 200px;
   }
 
   .rota-valor {

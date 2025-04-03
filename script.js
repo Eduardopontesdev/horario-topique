@@ -61,6 +61,7 @@ const passaCidadeD3 = document.getElementById("passaemD3");
 const passaCidadeD4 = document.getElementById("passaemD4");
 const rota = document.getElementById("rota");
 const selectHorario = document.getElementById("listaHorarios");
+const navbarHorario = document.getElementById("navbar");
 const optionHorario = document.getElementById("option-horario");
 const valor = document.getElementById("valor");
 
@@ -76,7 +77,6 @@ const dataPatrocinio = [
 const imagensPatrocinador = [
   "./src/patrocinador-1.png",
   "./src/patrocinador-2.png",
-  "./src/patrocinador-3.png",
 ];
 
 let imagemAtual = 0;
@@ -1857,11 +1857,15 @@ const topics = [
 
 function optionHorarios() {
   topics.forEach(function (topic) {
-    const option = document.createElement("option");
-    option.value = topic.topic;
-    option.textContent = topic.rota;
-
-    selectHorario.appendChild(option);
+    const li = document.createElement("li");
+    const button = document.createElement("button");
+    button.type = "submit";
+    button.value = topic.topic;
+    button.textContent = topic.rota;
+    button.id = "button";
+    
+    li.appendChild(button);
+    navbarHorario.appendChild(li);
   });
 }
 
@@ -2065,8 +2069,18 @@ function pegaHorario(item) {
 
 optionHorarios();
 
-selectHorario.addEventListener("change", () => {
-  let item = parseInt(selectHorario.value);
+const form = document.getElementById("form");
+const button = document.getElementById("button");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+ 
+
+   // O botão que disparou o submit está em `event.submitter` (modern browsers)
+  const botaoClicado = document.activeElement;
+
+  let item = parseInt(botaoClicado.value);
+  
   pegaHorario(item);
 });
 
@@ -2091,7 +2105,6 @@ function checarHorariosSemana(topic) {
 }
 
 function checarHorariosSabado(topic) {
-  console.log(topic);
   saidaRotaS.innerHTML = topic.saidarota;
   chegadaRotaS.innerHTML = topic.chegadarota;
   sabado.classList.remove("hide");
@@ -2173,3 +2186,30 @@ function mudaImagem() {
 }
 
 setInterval(mudaImagem, 8000);
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const select = document.getElementById('listaHorarios');
+//   const navbar = document.getElementById('navbar');
+//   const ul = document.createElement('ul');
+  
+//   ul.className = 'nav-list';
+  
+//   Array.from(select.options).forEach(option => {
+//     if (option.value) {
+//       const li = document.createElement('li');
+//       li.className = 'nav-item';
+      
+//       const a = document.createElement('a');
+//       a.href = option.value;
+//       a.textContent = option.text;
+      
+//       li.appendChild(a);
+//       ul.appendChild(li);
+//     }
+//   });
+  
+//   navbar.appendChild(ul);
+  
+//   // Opcional: esconder o select original
+//   // select.style.display = 'none';
+// });
