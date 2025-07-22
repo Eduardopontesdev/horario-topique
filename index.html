@@ -1,161 +1,197 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
+    <!-- Metadados básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Consulte os horários atualizados das topics que saem de Camocim e região. Rotas para Granja, Sobral, Barroquinha, Chaval, Preá e outras cidades."
+    />
+    <meta
+      name="keywords"
+      content="horários topics Camocim, transporte Camocim, ônibus Camocim, rotas Camocim, Granja Camocim, Sobral Camocim, Barroquinha Camocim"
+    />
+    <meta name="author" content="Eduardo Pontes Dev - Desenvolvedor" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook (para compartilhamento) -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Horario das Topics Camocim e Região" />
+    <meta property="og:url" content="https://horario-topique.vercel.app/" />
+    <meta
+      property="og:title"
+      content="🚌 Horários das Topics de Camocim e Região"
+    />
     <meta
       property="og:description"
-      content="Site com horarios das topics de Camocim e Região"
+      content="Horários completos das topics que ligam Camocim a Granja, Sobral, Barroquinha, Chaval, Preá e outras cidades da região."
     />
-    <meta property="og:site_name" content="horariodastopicscamocimeregiao" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Horario das Topics Camocim e Região</title>
+    <meta
+      property="og:image"
+      content="https://horario-topique.vercel.app/imagens/thumbnail.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://horario-topique.vercel.app/"
+    />
+    <meta
+      property="twitter:title"
+      content="🚌 Horários das Topics de Camocim e Região"
+    />
+    <meta
+      property="twitter:description"
+      content="Consulte os horários atualizados das topics que saem de Camocim para toda a região."
+    />
+    <meta
+      property="twitter:image"
+      content="https://horario-topique.vercel.app/imagens/thumbnail.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Canais alternativos (se aplicável) -->
+    <link
+      rel="alternate"
+      hreflang="pt-br"
+      href="https://horario-topique.vercel.app/"
+    />
+    <link
+      rel="alternate"
+      media="only screen and (max-width: 640px)"
+      href="https://horario-topique.vercel.app/"
+    />
+
+    <!-- Tema do navegador -->
+    <meta name="theme-color" content="#009688" />
+
+    <!-- Apple específico -->
+    <meta name="apple-mobile-web-app-title" content="Horários Camocim" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- Microsoft específico -->
+    <meta name="msapplication-TileColor" content="#009688" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <title>🚌 Horários das Topics de Camocim e Região</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="selecao" id="selecao">
-        <nav>
-          <form id="form">
-            <ul id="navbar">
-            </ul>
-          </form>
-        </nav>
-      </div>
+    <header>
+      <div class="logo">🚌 Horários das Topics</div>
+      <button class="open-modal-btn">Termos e Apoio</button>
+      <div id="clock">00:00</div>
     </header>
-    <main class="main hide">
-      <div class="container">
-        <div class="resultado hide">
-          <div class="rota-valor">
-            <h1 id="rota"></h1>
-            <span></span><span id="valor" class="valor"></span>
-          </div>
-          <div class="semana">
-            <span class="rota">Segunda a Sexta</span>
-            <div class="container-horarios">
-              <div class="saida-semana">
-                <p class="span-saida">saida de <span id="saida-rota"></span></p>
-                <ul class="saida" id="saidaSemana"></ul>
-              </div>
 
-              <div class="passada-semana hide">
-                <p class="span-passada">Passa em <span id="passaem"></span></p>
-                <ul class="saida" id="passadaSemana"></ul>
-              </div>
-              <div class="passada-semana2 hide">
-                <p class="span-passada">Passa em <span id="passaem2"></span></p>
-                <ul class="saida" id="passadaSemana2"></ul>
-              </div>
-              <div class="passada-semana3 hide">
-                <p class="span-passada">Passa em <span id="passaem3"></span></p>
-                <ul class="saida" id="passadaSemana3"></ul>
-              </div>
-              <div class="passada-semana4 hide">
-                <p class="span-passada">Passa em <span id="passaem4"></span></p>
-                <ul class="saida" id="passadaSemana4"></ul>
-              </div>
-
-              <div class="chegada-semana">
-                <p class="span-chegada">
-                  chegada em <span id="chegada-rota"></span>
-                </p>
-                <ul class="chegada" id="chegadaSemana"></ul>
-              </div>
-            </div>
-          </div>
-          <div class="sabado">
-            <span class="rota">Sábado</span>
-            <div class="container-horarios">
-              <div class="saida-sabado">
-                <p class="span-saida">
-                  saida de <span id="saida-rota-s"></span>
-                </p>
-                <ul class="saida" id="saidaSabado"></ul>
-              </div>
-              <div class="passada-sabado hide">
-                <p class="span-passada">Passa em <span id="passaemS"></span></p>
-                <ul class="saida" id="passadaSabado"></ul>
-              </div>
-              <div class="passada-sabado2 hide">
-                <p class="span-passada">
-                  Passa em <span id="passaemS2"></span>
-                </p>
-                <ul class="saida" id="passadaSabado2"></ul>
-              </div>
-              <div class="passada-sabado3 hide">
-                <p class="span-passada">
-                  Passa em <span id="passaemS3"></span>
-                </p>
-                <ul class="saida" id="passadaSabado3"></ul>
-              </div>
-              <div class="passada-sabado4 hide">
-                <p class="span-passada">
-                  Passa em <span id="passaemS4"></span>
-                </p>
-                <ul class="saida" id="passadaSabado4"></ul>
-              </div>
-              <div class="chegada-sabado">
-                <p class="span-chegada">
-                  chegada em <span id="chegada-rota-s"></span>
-                </p>
-                <ul class="chegada" id="chegadaSabado"></ul>
-              </div>
-            </div>
-          </div>
-          <div class="domingo hide">
-            <span class="rota">Domingo</span>
-            <div class="container-horarios">
-              <div class="saida-domingo">
-                <p class="span-saida">
-                  saida de <span id="saida-rota-d"></span>
-                </p>
-                <ul class="saida" id="saidaDomingo"></ul>
-              </div>
-              <div class="passada-domingo hide">
-                <p class="span-passada">Passa em <span id="passaemD"></span></p>
-                <ul class="saida" id="passadaDomingo"></ul>
-              </div>
-              <div class="passada-domingo2 hide">
-                <p class="span-passada">
-                  Passa em <span id="passaemD2"></span>
-                </p>
-                <ul class="saida" id="passadaDomingo2"></ul>
-              </div>
-              <div class="passada-domingo3 hide">
-                <p class="span-passada">
-                  Passa em <span id="passaemD3"></span>
-                </p>
-                <ul class="saida" id="passadaDomingo3"></ul>
-              </div>
-              <div class="passada-domingo4 hide">
-                <p class="span-passada">
-                  Passa em <span id="passaemD4"></span>
-                </p>
-                <ul class="saida" id="passadaDomingo4"></ul>
-              </div>
-              <div class="chegada-domingo">
-                <p class="span-chegada">
-                  chegada em <span id="chegada-rota-d"></span>
-                </p>
-                <ul class="chegada" id="chegadaDomingo"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
+    <main>
+      <div id="simple-loader">
+        <div class="loader-wheel"></div>
+        <p>Carregando...</p>
       </div>
-    </main>
-    <footer>
-      <!-- patrocinio    -->
-      <div class="patrocinio">
-        <p>Logomarca dos patrocinadores.</p>
+      <section id="lista-rotas" class="rotas-container"></section>
 
-        <span onclick="enviaMensagem()">88996328842</span>
-         <a href="#" target="_blank"><img src="./src/patrocinador-1.png" id="img-patrocinador" alt="imagem do patrocinador"/></a>
-         <span class="clique-aqui" onclick="enviaMensagem()">*clique aqui e fale conosco.</span>
-        <p>Seja nosso Patrocinador apenas 49,90.</p>
+      <section id="detalhe-rota" class="hidden">
+        <button id="voltar" class="btn-voltar">⬅ Voltar</button>
+        <div id="titulo-rota" class="titulo-detalhe"></div>
+        <div id="preco-rota" class="preco-detalhe"></div>
+        <div id="tabelas-rota" class="tabelas-container"></div>
+        <button id="voltar-bottom" class="btn-voltar">⬅ Voltar</button>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="termsModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+
+        <header>
+          <h1>Termos e Apoio</h1>
+          <p>Informações importantes sobre o uso deste serviço</p>
+        </header>
+
+        <section class="disclaimer">
+          <h2>🔒 Isenção de Responsabilidade</h2>
+          <p>
+            Os horários apresentados neste site são coletados de
+            <strong>fontes públicas oficiais</strong> e tabelas disponibilizadas
+            pelas empresas operadoras.
+          </p>
+
+          <p><strong>Importante:</strong></p>
+          <ul>
+            <li>Os horários podem sofrer alterações sem aviso prévio</li>
+            <li>
+              Atualizamos os dados periodicamente, mas não temos controle sobre
+              mudanças de última hora
+            </li>
+            <li>
+              Recomendamos sempre confirmar os horários diretamente com as
+              empresas
+            </li>
+            <li>
+              Não nos responsabilizamos por atrasos, cancelamentos ou mudanças
+              de itinerário
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>ℹ️ Sobre o Projeto</h2>
+          <p>
+            Este site foi criado para ajudar a comunidade de Camocim e região,
+            reunindo em um só lugar todos os horários das topics que circulam
+            pela cidade.
+          </p>
+        </section>
+
+        <!-- Conteúdo anterior... -->
+
+        <section class="support">
+          <h2>❤️ Apoie este Projeto</h2>
+          <p>
+            Se você encontra valor neste serviço, considere fazer uma
+            contribuição voluntária:
+          </p>
+
+          <div class="pix-container">
+            <span class="pix-key" id="pixKey">88996328842</span>
+            <button class="copy-pix-btn" onclick="copyPixKey()">
+              <span class="tooltip">
+                Copiar chave PIX
+                <span class="tooltiptext">Clique para copiar</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="payment-methods">
+            <div class="payment-method">Carlos Eduardo Pontes</div>
+            <div class="payment-method">Banco: Santander</div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <div class="patrocinio">
+        <span>Patrocinador:</span>
+        <img
+          src="logo-patrocinador.png"
+          alt="Patrocinador"
+          class="logo-patrocinador"
+        />
       </div>
     </footer>
-    <script src="./script.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>

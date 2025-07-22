@@ -1,2215 +1,762 @@
-const imgPatrocinador = document.getElementById("img-patrocinador");
-const saidaRota = document.getElementById("saida-rota");
-const saidaRotaS = document.getElementById("saida-rota-s");
-const saidaRotaD = document.getElementById("saida-rota-d");
-const chegadaRota = document.getElementById("chegada-rota");
-const chegadaRotaS = document.getElementById("chegada-rota-s");
-const chegadaRotaD = document.getElementById("chegada-rota-d");
-
-const seletor = document.querySelector(".resultado");
-const patrocinio = document.querySelector(".patrocinio");
-const main = document.querySelector(".main");
-const domingo = document.querySelector(".domingo");
-const sabado = document.querySelector(".sabado");
-//onde a topic ira passar / na rota adicional tambem
-const passadaSemanaHide = document.querySelector(".passada-semana");
-const passadaSemanaHide2 = document.querySelector(".passada-semana2");
-const passadaSemanaHide3 = document.querySelector(".passada-semana3");
-const passadaSemanaHide4 = document.querySelector(".passada-semana4");
-// fim
-//esconde ou mostra a lista de horarios se tiver disponivel
-const passadaSabadoHide = document.querySelector(".passada-sabado");
-const passadaSabadoHide2 = document.querySelector(".passada-sabado2");
-const passadaSabadoHide3 = document.querySelector(".passada-sabado3");
-const passadaSabadoHide4 = document.querySelector(".passada-sabado4");
-//fim
-const passadaDomingoHide = document.querySelector(".passada-domingo");
-const passadaDomingoHide2 = document.querySelector(".passada-domingo2");
-const passadaDomingoHide3 = document.querySelector(".passada-domingo3");
-const passadaDomingoHide4 = document.querySelector(".passada-domingo4");
-const saidaSemana = document.getElementById("saidaSemana");
-const saidaSabado = document.getElementById("saidaSabado");
-const saidaDomingo = document.getElementById("saidaDomingo");
-const chegadaSemana = document.getElementById("chegadaSemana");
-const chegadaSabado = document.getElementById("chegadaSabado");
-const chegadaDomingo = document.getElementById("chegadaDomingo");
-//valores que sera alterados se tiver os dados
-const passadaSemana = document.getElementById("passadaSemana");
-const passadaSemana2 = document.getElementById("passadaSemana2");
-const passadaSemana3 = document.getElementById("passadaSemana3");
-const passadaSemana4 = document.getElementById("passadaSemana4");
-// fim
-const passadaSabado = document.getElementById("passadaSabado");
-const passadaSabado2 = document.getElementById("passadaSabado2");
-const passadaSabado3 = document.getElementById("passadaSabado3");
-const passadaSabado4 = document.getElementById("passadaSabado4");
-const passadaDomingo = document.getElementById("passadaDomingo");
-const passadaDomingo2 = document.getElementById("passadaDomingo2");
-const passadaDomingo3 = document.getElementById("passadaDomingo3");
-const passadaDomingo4 = document.getElementById("passadaDomingo4");
-const passaCidade = document.getElementById("passaem");
-const passaCidade2 = document.getElementById("passaem2");
-const passaCidade3 = document.getElementById("passaem3");
-const passaCidade4 = document.getElementById("passaem4");
-const passaCidadeS = document.getElementById("passaemS");
-const passaCidadeS2 = document.getElementById("passaemS2");
-const passaCidadeS3 = document.getElementById("passaemS3");
-const passaCidadeS4 = document.getElementById("passaemS4");
-const passaCidadeD = document.getElementById("passaemD");
-const passaCidadeD2 = document.getElementById("passaemD2");
-const passaCidadeD3 = document.getElementById("passaemD3");
-const passaCidadeD4 = document.getElementById("passaemD4");
-const rota = document.getElementById("rota");
-const selectHorario = document.getElementById("listaHorarios");
-const navbarHorario = document.getElementById("navbar");
-const optionHorario = document.getElementById("option-horario");
-const valor = document.getElementById("valor");
-
-const dataPatrocinio = [
+const rotas = [
   {
-    nome: "topassageiros",
-    plano: "exclusivo",
-    datainicio: "22/01/2025",
-    datafinal: "22/02/2025"
-  }
-]
-
-const imagensPatrocinador = [
-  "./src/patrocinador-1.png",
-  "./src/patrocinador-2.png",
+    id: "granja-camocim",
+    nome: "Granja - Camocim",
+    preco: 7.45,
+    horarios: {
+      semana: [
+        ["05:45", "06:25"],
+        ["06:00", "06:40"],
+        ["06:20", "07:00"],
+        ["06:40", "07:20"],
+        ["07:00", "07:40"],
+        ["07:20", "08:00"],
+        ["07:40", "08:20"],
+        ["08:00", "08:40"],
+        ["08:20", "09:00"],
+        ["08:40", "09:20"],
+        ["09:00", "09:40"],
+        ["09:20", "10:00"],
+        ["09:40", "10:20"],
+        ["10:00", "10:40"],
+        ["10:20", "11:00"],
+        ["10:40", "11:20"],
+        ["11:00", "11:40"],
+        ["11:20", "12:00"],
+        ["11:40", "12:20"],
+        ["12:00", "12:40"],
+        ["12:25", "13:05"],
+        ["12:50", "13:30"],
+        ["13:15", "13:55"],
+        ["13:40", "14:20"],
+        ["14:05", "14:45"],
+        ["14:30", "15:10"],
+        ["14:55", "15:35"],
+        ["15:20", "16:00"],
+        ["15:45", "16:25"],
+        ["16:10", "16:50"],
+        ["16:35", "17:15"],
+        ["17:00", "17:40"],
+        ["17:25", "18:05"],
+        ["18:00", "18:40"],
+      ],
+      sabado: [
+        ["05:45", "06:25"],
+        ["06:00", "06:40"],
+        ["06:20", "07:00"],
+        ["06:40", "07:20"],
+        ["07:00", "07:40"],
+        ["07:20", "08:00"],
+        ["07:40", "08:20"],
+        ["08:00", "08:40"],
+        ["08:20", "09:00"],
+        ["08:40", "09:20"],
+        ["09:00", "09:40"],
+        ["09:20", "10:00"],
+        ["09:40", "10:20"],
+        ["10:00", "10:40"],
+        ["10:20", "11:00"],
+        ["10:40", "11:20"],
+        ["11:00", "11:40"],
+        ["11:20", "12:00"],
+        ["11:40", "12:20"],
+        ["12:00", "12:40"],
+        ["12:25", "13:05"],
+        ["12:50", "13:30"],
+        ["13:15", "13:55"],
+        ["13:40", "14:20"],
+        ["14:05", "14:45"],
+        ["14:30", "15:10"],
+        ["14:55", "15:35"],
+        ["15:20", "16:00"],
+        ["15:45", "16:25"],
+        ["16:10", "16:50"],
+        ["16:35", "17:15"],
+        ["17:00", "17:40"],
+        ["17:25", "18:05"],
+        ["18:00", "18:40"],
+      ],
+      domingo: [
+        ["07:00", "07:40"],
+        ["09:00", "09:40"],
+        ["11:00", "11:40"],
+        ["13:00", "13:40"],
+        ["15:00", "15:40"],
+        ["17:00", "17:40"],
+      ],
+    },
+    colunas: ["Saída de Granja", "Chegada em Camocim"],
+  },
+  {
+    id: "camocim-granja",
+    nome: "Camocim - Granja",
+    preco: 7.45,
+    horarios: {
+      semana: [
+        ["06:30", "07:10"],
+        ["06:45", "07:25"],
+        ["07:05", "07:45"],
+        ["07:25", "08:05"],
+        ["07:45", "08:25"],
+        ["08:05", "08:45"],
+        ["08:25", "09:05"],
+        ["08:45", "09:25"],
+        ["09:05", "09:45"],
+        ["09:25", "10:05"],
+        ["09:45", "10:25"],
+        ["10:05", "10:45"],
+        ["10:25", "11:05"],
+        ["10:45", "11:25"],
+        ["11:05", "11:45"],
+        ["11:25", "12:05"],
+        ["11:45", "12:25"],
+        ["12:05", "12:45"],
+        ["12:25", "13:05"],
+        ["12:45", "13:25"],
+        ["13:10", "13:50"],
+        ["13:35", "14:15"],
+        ["14:00", "14:40"],
+        ["14:25", "15:05"],
+        ["14:50", "15:30"],
+        ["15:15", "15:55"],
+        ["15:40", "16:20"],
+        ["16:05", "16:45"],
+        ["16:30", "17:10"],
+        ["16:55", "17:35"],
+        ["17:20", "18:00"],
+        ["17:45", "18:25"],
+        ["18:10", "18:50"],
+        ["18:45", "19:25"],
+      ],
+      sabado: [
+        ["06:30", "07:10"],
+        ["06:45", "07:25"],
+        ["07:05", "07:45"],
+        ["07:25", "08:05"],
+        ["07:45", "08:25"],
+        ["08:05", "08:45"],
+        ["08:25", "09:05"],
+        ["08:45", "09:25"],
+        ["09:05", "09:45"],
+        ["09:25", "10:05"],
+        ["09:45", "10:25"],
+        ["10:05", "10:45"],
+        ["10:25", "11:05"],
+        ["10:45", "11:25"],
+        ["11:05", "11:45"],
+        ["11:25", "12:05"],
+        ["11:45", "12:25"],
+        ["12:05", "12:45"],
+        ["12:25", "13:05"],
+        ["12:45", "13:25"],
+        ["13:10", "13:50"],
+        ["13:35", "14:15"],
+        ["14:00", "14:40"],
+        ["14:25", "15:05"],
+        ["14:50", "15:30"],
+        ["15:15", "15:55"],
+        ["15:40", "16:20"],
+        ["16:05", "16:45"],
+        ["16:30", "17:10"],
+        ["16:55", "17:35"],
+        ["17:20", "18:00"],
+        ["17:45", "18:25"],
+        ["18:10", "18:50"],
+        ["18:45", "19:25"],
+      ],
+      domingo: [
+        ["09:00", "09:40"],
+        ["11:00", "11:40"],
+        ["13:00", "13:40"],
+        ["15:00", "15:40"],
+        ["17:00", "17:40"],
+        ["17:45", "18:25"],
+      ],
+    },
+    colunas: ["Saída de Camocim", "Chegada em Granja"],
+  },
+  {
+    id: "chaval-camocim",
+    nome: "Chaval - Camocim",
+    preco: 14.95,
+    horarios: {
+      semana: [
+        ["06:00", "07:00"],
+        ["06:30", "07:30"],
+        ["07:00", "08:00"],
+        ["09:30", "10:30"],
+        ["11:40", "12:40"],
+        ["12:50", "13:50"],
+      ],
+      sabado: [["07:10", "08:10"]],
+      domingo: [],
+    },
+    colunas: ["Saída de Chaval", "Chegada em Camocim"],
+  },
+  {
+    id: "camocim-chaval",
+    nome: "Camocim - Chaval",
+    preco: 14.95,
+    horarios: {
+      semana: [
+        ["07:50", "08:50"],
+        ["09:50", "10:50"],
+        ["10:50", "11:50"],
+        ["11:40", "12:40"],
+        ["14:30", "15:30"],
+        ["16:30", "17:30"],
+      ],
+      sabado: [["11:30", "12:30"]],
+      domingo: [],
+    },
+    colunas: ["Saída de Camocim", "Chegada em Chaval"],
+  },
+  {
+    id: "barroquinha-camocim",
+    nome: "Barroquinha - Camocim",
+    preco: 11.2,
+    horarios: {
+      semana: [
+        ["05:40", "06:30"],
+        ["06:10", "07:00"],
+        ["06:40", "07:30"],
+        ["07:10", "08:00"],
+        ["08:10", "09:00"],
+        ["09:40", "10:30"],
+        ["10:30", "11:20"],
+        ["11:30", "12:20"],
+        ["12:50", "13:40"],
+        ["14:40", "15:30"],
+        ["16:50", "17:40"],
+      ],
+      sabado: [
+        ["06:15", "07:00"],
+        ["07:15", "08:00"],
+        ["08:15", "09:00"],
+        ["10:30", "11:20"],
+        ["12:50", "13:40"],
+        ["16:50", "17:40"],
+      ],
+      domingo: [["07:10", "08:00"]],
+    },
+    colunas: ["Saída de Barroquinha", "Chegada em Camocim"],
+  },
+  {
+    id: "camocim-barroquinha",
+    nome: "Camocim - Barroquinha",
+    preco: 11.2,
+    horarios: {
+      semana: [
+        ["07:10", "08:00"],
+        ["08:20", "09:30"],
+        ["08:50", "09:40"],
+        ["09:20", "10:10"],
+        ["10:20", "11:10"],
+        ["11:20", "12:10"],
+        ["12:10", "13:00"],
+        ["13:00", "13:50"],
+        ["14:00", "14:50"],
+        ["15:50", "16:40"],
+        ["18:00", "18:50"],
+      ],
+      sabado: [
+        ["08:15", "09:00"],
+        ["09:40", "10:30"],
+        ["11:00", "11:50"],
+        ["12:50", "13:40"],
+        ["14:30", "15:20"],
+        ["18:00", "18:50"],
+      ],
+      domingo: [["09:30", "10:20"]],
+    },
+    colunas: ["Saída de Camocim", "Chegada em Barroquinha"],
+  },
+  {
+    id: "bitupita-camocim",
+    nome: "Bitupitá - Camocim",
+    preco: 19.1,
+    horarios: {
+      semana: [
+        ["05:40", "06:15", "06:55"],
+        ["06:40", "07:15", "07:55"],
+        ["07:10", "07:40", "08:20"],
+        ["13:00", "13:30", "14:10"],
+      ],
+      sabado: [["06:40", "07:20", "07:55"]],
+      domingo: [],
+    },
+    colunas: [
+      "Saída de Bitupitá",
+      "Passa em Barroquinha",
+      "Chegada em Camocim",
+    ],
+  },
+  {
+    id: "camocim-bitupita",
+    nome: "Camocim - Bitupitá",
+    preco: 19.1,
+    horarios: {
+      semana: [
+        ["10:40", "11:20", "11:55"],
+        ["11:30", "12:10", "12:45"],
+        ["12:40", "13:20", "13:55"],
+        ["16:10", "16:50", "17:55"],
+      ],
+      sabado: [["11:20", "12:00", "12:40"]],
+      domingo: [],
+    },
+    colunas: [
+      "Saída de Camocim",
+      "Passa em Barroquinha",
+      "Chegada em Bitupitá",
+    ],
+  },
+  {
+    id: "camocim-sobral",
+    nome: "Camocim - Sobral",
+    preco: 38.1,
+    horarios: {
+      semana: [
+        ["03:30", "04:30", "05:00", "05:15", "05:30", "06:00"],
+        ["05:00", "06:00", "06:30", "06:45", "07:00", "07:30"],
+        ["07:00", "08:00", "08:30", "08:45", "09:00", "09:30"],
+        ["09:00", "10:00", "10:30", "10:45", "11:00", "11:30"],
+        ["11:00", "12:00", "12:30", "12:45", "13:00", "13:30"],
+        ["13:00", "14:00", "14:30", "14:45", "15:00", "15:30"],
+        ["15:00", "16:00", "16:30", "16:45", "17:00", "17:30"],
+      ],
+      sabado: [
+        ["03:30", "04:30", "05:00", "05:15", "05:30", "06:00"],
+        ["05:00", "06:00", "06:30", "06:45", "07:00", "07:30"],
+        ["07:00", "08:00", "08:30", "08:45", "09:00", "09:30"],
+        ["09:00", "10:00", "10:30", "10:45", "11:00", "11:30"],
+        ["11:00", "12:00", "12:30", "12:45", "13:00", "13:30"],
+        ["13:00", "14:00", "14:30", "14:45", "15:00", "15:30"],
+        ["15:00", "16:00", "16:30", "16:45", "17:00", "17:30"],
+      ],
+      domingo: [
+        ["04:30", "05:30", "06:00", "06:15", "06:30", "07:00"],
+        ["07:00", "08:00", "08:30", "08:45", "09:00", "09:30"],
+        ["15:00", "16:00", "16:30", "16:45", "17:00", "17:30"],
+      ],
+    },
+    colunas: [
+      "Saída de Camocim",
+      "Passa em Martinópole",
+      "Passa em Uruoca",
+      "Passa em Senador",
+      "Passa em Massapê",
+      "Chegada em Sobral",
+    ],
+  },
+  {
+    id: "sobral-camocim",
+    nome: "Sobral - Camocim",
+    preco: 38.1,
+    horarios: {
+      semana: [
+        ["06:00", "06:30", "06:45", "07:00", "07:30", "08:30"],
+        ["08:00", "08:30", "08:45", "09:00", "09:30", "10:30"],
+        ["11:00", "11:30", "11:45", "12:00", "12:30", "13:30"],
+        ["13:00", "13:30", "13:45", "14:00", "14:30", "15:30"],
+        ["15:00", "15:30", "15:45", "16:00", "16:30", "17:30"],
+        ["17:00", "17:30", "17:45", "18:00", "18:30", "19:30"],
+        ["18:20", "18:50", "19:05", "19:20", "19:50", "20:50"],
+      ],
+      sabado: [
+        ["06:00", "06:30", "06:45", "07:00", "07:30", "08:30"],
+        ["08:00", "08:30", "08:45", "09:00", "09:30", "10:30"],
+        ["11:00", "11:30", "11:45", "12:00", "12:30", "13:30"],
+        ["13:00", "13:30", "13:45", "14:00", "14:30", "15:30"],
+        ["15:00", "15:30", "15:45", "16:00", "16:30", "17:30"],
+        ["17:00", "17:30", "17:45", "18:00", "18:30", "19:30"],
+        ["18:20", "18:50", "19:05", "19:20", "19:50", "20:50"],
+      ],
+      domingo: [
+        ["07:00", "07:30", "07:45", "08:00", "08:30", "09:30"],
+        ["11:00", "11:30", "11:45", "12:00", "12:30", "13:30"],
+        ["18:20", "18:50", "19:05", "19:20", "19:50", "20:50"],
+      ],
+    },
+    colunas: [
+      "Saída de Sobral",
+      "Passa em Massapê",
+      "Passa em Senador",
+      "Passa em Uruoca",
+      "Passa em Martinópole",
+      "Chegada em Camocim",
+    ],
+  },
+  {
+    id: "prea-camocim",
+    nome: "Preá - Camocim",
+    preco: 29.75,
+    horarios: {
+      semana: [
+        ["05:00", "05:45", "06:15", "06:50", "07:30"],
+        ["06:00", "06:45", "07:15", "07:50", "08:30"],
+        ["07:00", "07:45", "08:15", "08:50", "09:30"],
+        ["08:15", "09:00", "09:30", "10:05", "10:45"],
+        ["09:30", "10:15", "10:45", "11:20", "12:00"],
+        ["10:45", "11:30", "12:00", "12:35", "13:15"],
+        ["12:00", "12:45", "13:15", "13:50", "14:30"],
+        ["13:15", "14:00", "14:30", "15:05", "15:45"],
+        ["14:30", "15:15", "15:45", "16:20", "17:00"],
+        ["15:45", "16:30", "17:00", "17:35", "18:15"],
+        ["17:00", "17:45", "18:15", "18:50", "19:30"],
+        ["18:00", "18:45", "19:15", "19:50", "20:30"],
+      ],
+      sabado: [
+        ["05:00", "05:45", "06:15", "06:50", "07:30"],
+        ["06:00", "06:45", "07:15", "07:50", "08:30"],
+        ["07:00", "07:45", "08:15", "08:50", "09:30"],
+        ["08:15", "09:00", "09:30", "10:05", "10:45"],
+        ["09:30", "10:15", "10:45", "11:20", "12:00"],
+        ["10:45", "11:30", "12:00", "12:35", "13:15"],
+        ["12:00", "12:45", "13:15", "13:50", "14:30"],
+        ["13:15", "14:00", "14:30", "15:05", "15:45"],
+        ["14:30", "15:15", "15:45", "16:20", "17:00"],
+        ["15:45", "16:30", "17:00", "17:35", "18:15"],
+        ["17:00", "17:45", "18:15", "18:50", "19:30"],
+        ["18:00", "18:45", "19:15", "19:50", "20:30"],
+      ],
+      domingo: [
+        ["05:30", "06:15", "06:45", "07:20", "08:00"],
+        ["07:30", "08:15", "08:45", "09:20", "10:00"],
+        ["09:30", "10:15", "10:45", "11:20", "12:00"],
+        ["14:30", "15:15", "15:45", "16:20", "17:00"],
+        ["16:15", "17:00", "17:30", "18:05", "18:45"],
+        ["17:45", "18:30", "19:00", "19:35", "20:15"],
+      ],
+    },
+    colunas: [
+      "Saída de Preá",
+      "Passa em Jijoca",
+      "Passa em Parazinho",
+      "Passa em Granja",
+      "Chegada em Camocim",
+    ],
+  },
+  {
+    id: "camocim-prea",
+    nome: "Camocim - Preá",
+    preco: 29.75,
+    horarios: {
+      semana: [
+        ["05:00", "05:40", "06:15", "06:45", "07:30"],
+        ["06:00", "06:40", "07:15", "07:45", "08:30"],
+        ["07:00", "07:40", "08:15", "08:45", "09:30"],
+        ["08:15", "08:55", "09:30", "10:00", "10:45"],
+        ["09:30", "10:10", "10:45", "11:15", "12:00"],
+        ["10:45", "11:25", "12:00", "12:30", "13:15"],
+        ["12:00", "12:40", "13:15", "13:45", "14:30"],
+        ["13:15", "13:55", "14:30", "15:00", "15:45"],
+        ["14:30", "15:10", "15:45", "16:15", "17:00"],
+        ["15:45", "16:25", "17:00", "17:30", "18:15"],
+        ["17:00", "17:40", "18:15", "18:45", "19:30"],
+        ["18:00", "18:40", "19:15", "19:45", "20:30"],
+      ],
+      sabado: [
+        ["05:00", "05:40", "06:15", "06:45", "07:30"],
+        ["06:00", "06:40", "07:15", "07:45", "08:30"],
+        ["07:00", "07:40", "08:15", "08:45", "09:30"],
+        ["08:15", "08:55", "09:30", "10:00", "10:45"],
+        ["09:30", "10:10", "10:45", "11:15", "12:00"],
+        ["10:45", "11:25", "12:00", "12:30", "13:15"],
+        ["12:00", "12:40", "13:15", "13:45", "14:30"],
+        ["13:15", "13:55", "14:30", "15:00", "15:45"],
+        ["14:30", "15:10", "15:45", "16:15", "17:00"],
+        ["15:45", "16:25", "17:00", "17:30", "18:15"],
+        ["17:00", "17:40", "18:15", "18:45", "19:30"],
+        ["18:00", "18:40", "19:15", "19:45", "20:30"],
+      ],
+      domingo: [
+        ["05:00", "05:40", "06:15", "06:45", "07:30"],
+        ["07:00", "07:40", "08:15", "08:45", "09:30"],
+        ["09:30", "10:10", "10:45", "11:15", "12:00"],
+        ["12:00", "12:40", "13:15", "13:45", "14:30"],
+        ["14:30", "15:10", "15:45", "16:15", "17:00"],
+        ["17:00", "17:40", "18:15", "18:45", "19:30"],
+      ],
+    },
+    colunas: [
+      "Saída de Camocim",
+      "Passa em Granja",
+      "Passa em Parazinho",
+      "Passa em Jijoca",
+      "Chegada em Preá",
+    ],
+  },
+  {
+    id: "araras-camocim",
+    nome: "Araras - Camocim",
+    preco: 19.1,
+    horarios: {
+      semana: [["05:40", "06:00", "06:25", "07:05"]],
+      sabado: [],
+      domingo: [],
+    },
+    colunas: [
+      "Saída de Chapada",
+      "Passa em Araras",
+      "Passa em Barroquinha",
+      "Chegada em Camocim",
+    ],
+  },
+  {
+    id: "camocim-araras",
+    nome: "Camocim - Araras",
+    preco: 19.1,
+    horarios: {
+      semana: [["11:00", "11:40", "12:05", "12:25"]],
+      sabado: [],
+      domingo: [],
+    },
+    colunas: [
+      "Saída de Camocim",
+      "Passa em Barroquinha",
+      "Passa em Araras",
+      "Chegada em Chapada",
+    ],
+  },
+  {
+    id: "camocim-tiangua",
+    nome: "Camocim - Tianguá",
+    preco: 35.9,
+    horarios: {
+      semana: [
+        ["05:45", "07:00", "08:20", "09:00"],
+        ["10:05", "11:20", "12:40", "13:15"],
+      ],
+      sabado: [
+        ["05:45", "07:00", "08:20", "09:00"],
+        ["10:05", "11:20", "12:40", "13:15"],
+      ],
+      domingo: [],
+    },
+    colunas: [
+      "Saída de Camocim",
+      "Passa em Santa Terezinha",
+      "Passa em Viçosa",
+      "Chegada em Tianguá",
+    ],
+  },
+  {
+    id: "tiangua-camocim",
+    nome: "Tianguá - Camocim",
+    preco: 35.9,
+    horarios: {
+      semana: [
+        ["06:00", "06:40", "07:50", "09:15"],
+        ["15:00", "15:40", "16:50", "18:15"],
+      ],
+      sabado: [
+        ["06:00", "06:40", "07:50", "09:15"],
+        ["12:00", "12:40", "13:50", "15:15"],
+      ],
+      domingo: [],
+    },
+    colunas: [
+      "Saída de Tianguá",
+      "Passa em Viçosa",
+      "Passa em Santa Terezinha",
+      "Chegada em Camocim",
+    ],
+  },
+  {
+    id: "camocim-parnaiba",
+    nome: "Camocim - Parnaiba",
+    preco: 45,
+    horarios: {
+      semana: [["08:30", "10:30"]],
+      sabado: [["08:30", "10:30"]],
+      domingo: [],
+    },
+    colunas: ["Saída de Camocim", "Chegada em Parnaiba"],
+  },
+  {
+    id: "parnaiba-camocim",
+    nome: "Parnaiba - Camocim",
+    preco: 45,
+    horarios: {
+      semana: [["12:30", "14:30"]],
+      sabado: [["12:00", "14:00"]],
+      domingo: [],
+    },
+    colunas: ["Saída de Parnaiba", "Chegada em Camocim"],
+  },
 ];
 
-let imagemAtual = 0;
+const listaRotas = document.getElementById("lista-rotas");
+const detalheRota = document.getElementById("detalhe-rota");
+const tituloRota = document.getElementById("titulo-rota");
+const tabelasRota = document.getElementById("tabelas-rota");
+const btnVoltar = document.getElementById("voltar");
+const btnVoltarBottom = document.getElementById("voltar-bottom");
+const precoRota = document.getElementById("preco-rota"); // Adicionei um elemento para mostrar o preço
 
-const topics = [
-  {
-    //granja a camocim
-    topic: 1,
-    rota: "Granja - Camocim",
-    saidarota: "Granja",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: [
-        "05:45",
-        "06:00",
-        "06:20",
-        "06:40",
-        "07:00",
-        "07:20",
-        "07:40",
-        "08:00",
-        "08:20",
-        "08:40",
-        "09:00",
-        "09:20",
-        "09:40",
-        "10:00",
-        "10:20",
-        "10:40",
-        "11:00",
-        "11:20",
-        "11:40",
-        "12:00",
-        "12:25",
-        "12:50",
-        "13:15",
-        "13:40",
-        "14:05",
-        "14:30",
-        "14:55",
-        "15:20",
-        "15:45",
-        "16:10",
-        "16:35",
-        "17:00",
-        "17:25",
-        "18:00",
-      ],
-      chegada: [
-        "06:25",
-        "06:40",
-        "07:00",
-        "07:20",
-        "07:40",
-        "08:00",
-        "08:20",
-        "08:40",
-        "09:00",
-        "09:20",
-        "09:40",
-        "10:00",
-        "10:20",
-        "10:40",
-        "11:00",
-        "11:20",
-        "11:40",
-        "12:00",
-        "12:20",
-        "12:40",
-        "13:05",
-        "13:30",
-        "13:55",
-        "14:20",
-        "14:45",
-        "15:10",
-        "15:35",
-        "16:00",
-        "16:25",
-        "16:50",
-        "17:15",
-        "17:40",
-        "18:05",
-        "18:40",
-      ],
-    },
-    sabado: {
-      saidarota: "Granja",
-      chegadarota: "Camocim",
-      saida: [],
-      chegada: [],
-    },
-    valor: 7.45,
-    domingo: {
-      saidarota: "Granja",
-      chegadarota: "Camocim",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //fim granja a camocim
-  //camocim a granja
-  {
-    topic: 2,
-    rota: "Camocim - Granja",
-    saidarota: "Camocim",
-    chegadarota: "Granja",
-    segundaasexta: {
-      saida: [
-        "06:30",
-        "06:45",
-        "07:05",
-        "07:25",
-        "07:45",
-        "08:05",
-        "08:25",
-        "08:45",
-        "09:05",
-        "09:25",
-        "09:45",
-        "10:05",
-        "10:25",
-        "10:45",
-        "11:05",
-        "11:25",
-        "11:45",
-        "12:05",
-        "12:25",
-        "12:45",
-        "13:10",
-        "13:35",
-        "14:00",
-        "14:25",
-        "14:50",
-        "15:15",
-        "15:40",
-        "16:05",
-        "16:30",
-        "16:55",
-        "17:20",
-        "17:45",
-        "18:10",
-        "18:45",
-      ],
-      chegada: [
-        "07:10",
-        "07:25",
-        "07:45",
-        "08:05",
-        "08:25",
-        "08:45",
-        "09:05",
-        "09:25",
-        "09:45",
-        "10:05",
-        "10:25",
-        "10:45",
-        "11:05",
-        "11:25",
-        "11:45",
-        "12:05",
-        "12:25",
-        "12:45",
-        "13:05",
-        "13:25",
-        "13:50",
-        "14:15",
-        "14:40",
-        "15:05",
-        "15:30",
-        "15:55",
-        "16:20",
-        "16:45",
-        "17:10",
-        "17:35",
-        "18:00",
-        "18:25",
-        "18:50",
-        "19:25",
-      ],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Granja",
-      saida: [],
-      chegada: [],
-    },
-    valor: 7.45,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Granja",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //fim camocim a granja
-  //chaval a camocim
-  {
-    topic: 3,
-    rota: "Chaval - Camocim",
-    saidarota: "Chaval",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: ["06:00", "06:30", "07:00", "09:30", "11:40", "12:50"],
-      chegada: ["07:00", "07:30", "08:00", "10:30", "12:40", "13:50"],
-    },
-    sabado: {
-      saidarota: "Chaval",
-      chegadarota: "Camocim",
-      saida: ["07:10"],
-      chegada: ["08:10"],
-    },
-    valor: 14.95,
-    domingo: {
-      saidarota: "Chaval",
-      chegadarota: "Camocim",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //camocim a chaval
-  {
-    topic: 4,
-    rota: "Camocim - Chaval",
-    saidarota: "Camocim",
-    chegadarota: "Chaval",
-    segundaasexta: {
-      saida: ["07:50", "09:50", "10:50", "11:40", "14:30", "16:30"],
-      chegada: ["08:50", "10:50", "11:50", "12:40", "15:30", "17:30"],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Chaval",
-      saida: ["11:30"],
-      chegada: ["12:30"],
-    },
-    valor: 14.95,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Chaval",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //barroquinha a camocim
-  {
-    topic: 5,
-    rota: "Barroquinha - Camocim",
-    saidarota: "Barroquinha",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: [
-        "05:40",
-        "06:10",
-        "06:40",
-        "07:10",
-        "08:10",
-        "09:40",
-        "10:30",
-        "11:30",
-        "12:50",
-        "14:40",
-        "16:50",
-      ],
-      chegada: [
-        "06:30",
-        "07:00",
-        "07:30",
-        "08:00",
-        "09:00",
-        "10:30",
-        "11:20",
-        "12:20",
-        "13:40",
-        "15:30",
-        "17:40",
-      ],
-    },
-    sabado: {
-      saidarota: "Barroquinha",
-      chegadarota: "Camocim",
-      saida: ["06:15", "07:15", "08:15", "10:30", "12:50", "16:50"],
-      chegada: ["07:00", "08:00", "09:00", "11:20", "13:40", "17:40"],
-    },
-    valor: 11.20,
-    domingo: {
-      saidarota: "Barroquinha",
-      chegadarota: "Camocim",
-      saida: ["07:10"],
-      chegada: ["08:00"],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //camocim a barroquinha
-  {
-    topic: 6,
-    rota: "Camocim - Barroquinha",
-    saidarota: "Camocim",
-    chegadarota: "Barroquinha",
-    segundaasexta: {
-      saida: [
-        "07:10",
-        "08:20",
-        "08:50",
-        "09:20",
-        "10:20",
-        "11:20",
-        "12:10",
-        "13:00",
-        "14:00",
-        "15:50",
-        "18:00",
-      ],
-      chegada: [
-        "08:00",
-        "09:30",
-        "09:40",
-        "10:10",
-        "11:10",
-        "12:10",
-        "13:00",
-        "13:50",
-        "14:50",
-        "16:40",
-        "18:50",
-      ],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Barroquinha",
-      saida: ["08:15", "09:40", "11:00", "12:50", "14:30", "18:00"],
-      chegada: ["09:00", "10:30", "11:50", "13:40", "15:20", "18:50"],
-    },
-    valor: 11.20,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Barroquinha",
-      saida: ["09:30"],
-      chegada: ["10:20"],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //bitupita a camocim
-  {
-    topic: 7,
-    rota: "Bitupitá - Camocim",
-    saidarota: "Bitupitá",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: ["05:40", "06:40", "07:10", "13:00"],
-      chegada: ["06:55", "07:55", "08:20", "14:10"],
-    },
-    sabado: {
-      saidarota: "Bitupitá",
-      chegadarota: "Camocim",
-      saida: ["06:40"],
-      chegada: ["07:55"],
-    },
-    valor: 19.1,
-    domingo: {
-      saidarota: "Bitupitá",
-      chegadarota: "Camocim",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Barroquinha",
-        passada: ["06:15", "07:15", "07:40", "13:30"],
-        sabado: {
-          passada: ["07:20"],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //camocim a bitupita
-  {
-    topic: 8,
-    rota: "Camocim - Bitupitá",
-    saidarota: "Camocim",
-    chegadarota: "Bitupitá",
-    segundaasexta: {
-      saida: ["10:40", "11:30", "12:40", "16:10"],
-      chegada: ["11:55", "12:45", "13:55", "17:55"],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Bitupitá",
-      saida: ["11:20"],
-      chegada: ["12:40"],
-    },
-    valor: 19.10,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Bitupitá",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Barroquinha",
-        passada: ["11:20", "12:10", "13:20", "16:50"],
-        sabado: {
-          passada: ["12:00"],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //camocim a sobral
-  {
-    topic: 9,
-    rota: "Camocim - Sobral",
-    saidarota: "Camocim",
-    chegadarota: "Sobral",
-    segundaasexta: {
-      saida: ["03:30", "05:00", "07:00", "09:00", "11:00", "13:00", "15:00"],
-      chegada: ["06:00", "07:30", "09:30", "11:30", "13:30", "15:30", "17:30"],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Sobral",
-      saida: ["03:30", "05:00", "07:00", "09:00", "11:00", "13:00", "15:00"],
-      chegada: ["06:00", "07:30", "09:30", "11:30", "13:30", "15:30", "17:30"],
-    },
-    valor: 38.10,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Sobral",
-      saida: ["04:30", "07:00", "15:00"],
-      chegada: ["07:00", "09:30", "17:30"],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Martinopole",
-        passada: [
-          "04:30",
-          "06:00",
-          "08:00",
-          "10:00",
-          "12:00",
-          "14:00",
-          "16:00",
-        ],
-        sabado: {
-          passada: [
-            "04:30",
-            "06:00",
-            "08:00",
-            "10:00",
-            "12:00",
-            "14:00",
-            "16:00",
-          ],
-        },
-        domingo: {
-          passada: ["05:30", "08:00", "16:00"],
-        },
-      },
-      cidade2: {
-        nome: "Uruoca",
-        passada: [
-          "05:00",
-          "06:30",
-          "08:30",
-          "10:30",
-          "12:30",
-          "14:30",
-          "16:30",
-        ],
-        sabado: {
-          passada: [
-            "05:00",
-            "06:30",
-            "08:30",
-            "10:30",
-            "12:30",
-            "14:30",
-            "16:30",
-          ],
-        },
-        domingo: {
-          passada: ["06:00", "08:30", "16:30"],
-        },
-      },
-      cidade3: {
-        nome: "Senador",
-        passada: [
-          "05:15",
-          "06:45",
-          "08:45",
-          "10:45",
-          "12:45",
-          "14:45",
-          "16:45",
-        ],
-        sabado: {
-          passada: [
-            "05:15",
-            "06:45",
-            "08:45",
-            "10:45",
-            "12:45",
-            "14:45",
-            "16:45",
-          ],
-        },
-        domingo: {
-          passada: ["06:15", "08:45", "16:45"],
-        },
-      },
-      cidade4: {
-        nome: "Massape",
-        passada: [
-          "05:30",
-          "07:00",
-          "09:00",
-          "11:00",
-          "13:00",
-          "15:00",
-          "17:00",
-        ],
-        sabado: {
-          passada: [
-            "05:30",
-            "07:00",
-            "09:00",
-            "11:00",
-            "13:00",
-            "15:00",
-            "17:00",
-          ],
-        },
-        domingo: {
-          passada: ["06:30", "09:00", "17:00"],
-        },
-      },
-    },
-  },
-  //sobral a camocim
-  {
-    topic: 10,
-    rota: "Sobral - Camocim",
-    saidarota: "Sobral",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: ["06:00", "08:00", "11:00", "13:00", "15:00", "17:00", "18:20"],
-      chegada: ["08:30", "10:30", "13:30", "15:30", "17:30", "19:30", "20:50"],
-    },
-    sabado: {
-      saidarota: "Sobral",
-      chegadarota: "Camocim",
-      saida: ["06:00", "08:00", "11:00", "13:00", "15:00", "17:00", "18:20"],
-      chegada: ["08:30", "10:30", "13:30", "15:30", "17:30", "19:30", "20:50"],
-    },
-    valor: 38.10,
-    domingo: {
-      saidarota: "Sobral",
-      chegadarota: "Camocim",
-      saida: ["07:00", "11:00", "18:20"],
-      chegada: ["09:30", "13:30", "20:50"],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Massape",
-        passada: [
-          "06:30",
-          "08:30",
-          "11:30",
-          "13:30",
-          "15:30",
-          "17:30",
-          "18:50",
-        ],
-        sabado: {
-          passada: [
-            "06:30",
-            "08:30",
-            "11:30",
-            "13:30",
-            "15:30",
-            "17:30",
-            "18:50",
-          ],
-        },
-        domingo: {
-          passada: ["07:30", "11:30", "18:50"],
-        },
-      },
-      cidade2: {
-        nome: "Senador",
-        passada: [
-          "06:45",
-          "08:45",
-          "11:45",
-          "13:45",
-          "15:45",
-          "17:45",
-          "19:05",
-        ],
-        sabado: {
-          passada: [
-            "06:45",
-            "08:45",
-            "11:45",
-            "13:45",
-            "15:45",
-            "17:45",
-            "19:05",
-          ],
-        },
-        domingo: {
-          passada: ["07:45", "11:45", "19:05"],
-        },
-      },
-      cidade3: {
-        nome: "Uruoca",
-        passada: [
-          "07:00",
-          "09:00",
-          "12:00",
-          "14:00",
-          "16:00",
-          "18:00",
-          "19:20",
-        ],
-        sabado: {
-          passada: [
-            "07:00",
-            "09:00",
-            "12:00",
-            "14:00",
-            "16:00",
-            "18:00",
-            "19:20",
-          ],
-        },
-        domingo: {
-          passada: ["08:00", "12:00", "19:20"],
-        },
-      },
-      cidade4: {
-        nome: "Martinopole",
-        passada: [
-          "07:30",
-          "09:30",
-          "12:30",
-          "14:30",
-          "16:30",
-          "18:30",
-          "19:50",
-        ],
-        sabado: {
-          passada: [
-            "07:30",
-            "09:30",
-            "12:30",
-            "14:30",
-            "16:30",
-            "18:30",
-            "19:50",
-          ],
-        },
-        domingo: {
-          passada: ["08:30", "12:30", "19:50"],
-        },
-      },
-    },
-  },
-  //Preá a camocim
-  {
-    topic: 11,
-    rota: "Preá - Camocim",
-    saidarota: "Preá",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: [
-        "05:00",
-        "06:00",
-        "07:00",
-        "08:15",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:00",
-      ],
-      chegada: [
-        "07:30",
-        "08:30",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:15",
-        "19:30",
-        "20:30",
-      ],
-    },
-    sabado: {
-      saidarota: "Preá",
-      chegadarota: "Camocim",
-      saida: [
-        "05:00",
-        "06:00",
-        "07:00",
-        "08:15",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:00",
-      ],
-      chegada: [
-        "07:30",
-        "08:30",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:15",
-        "19:30",
-        "20:30",
-      ],
-    },
-    valor: 29.75,
-    domingo: {
-      saidarota: "Preá",
-      chegadarota: "Camocim",
-      saida: ["05:30", "07:30", "09:30", "14:30", "16:15", "17:45"],
-      chegada: ["08:00", "10:00", "12:00", "17:00", "18:45", "20:15"],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Jijoca",
-        passada: [
-          "05:45",
-          "06:45",
-          "07:45",
-          "09:00",
-          "10:15",
-          "11:30",
-          "12:45",
-          "14:00",
-          "15:15",
-          "16:30",
-          "17:45",
-          "18:45",
-        ],
-        sabado: {
-          passada: [
-            "05:45",
-            "06:45",
-            "07:45",
-            "09:00",
-            "10:15",
-            "11:30",
-            "12:45",
-            "14:00",
-            "15:15",
-            "16:30",
-            "17:45",
-            "18:45",
-          ],
-        },
-        domingo: {
-          passada: ["06:15", "08:15", "10:15", "15:15", "17:00", "18:30"],
-        },
-      },
-      cidade2: {
-        nome: "Parazinho",
-        passada: [
-          "06:15",
-          "07:15",
-          "08:15",
-          "09:30",
-          "10:45",
-          "12:00",
-          "13:15",
-          "14:30",
-          "15:45",
-          "17:00",
-          "18:15",
-          "19:15",
-        ],
-        sabado: {
-          passada: [
-            "06:15",
-            "07:15",
-            "08:15",
-            "09:30",
-            "10:45",
-            "12:00",
-            "13:15",
-            "14:30",
-            "15:45",
-            "17:00",
-            "18:15",
-            "19:15",
-          ],
-        },
-        domingo: {
-          passada: ["06:45", "08:45", "10:45", "15:45", "17:30", "19:00"],
-        },
-      },
-      cidade3: {
-        nome: "Granja",
-        passada: [
-          "06:50",
-          "07:50",
-          "08:50",
-          "10:05",
-          "11:20",
-          "12:35",
-          "13:50",
-          "15:05",
-          "16:20",
-          "17:35",
-          "18:50",
-          "19:50",
-        ],
-        sabado: {
-          passada: [
-            "06:50",
-            "07:50",
-            "08:50",
-            "10:05",
-            "11:20",
-            "12:35",
-            "13:50",
-            "15:05",
-            "16:20",
-            "17:35",
-            "18:50",
-            "19:50",
-          ],
-        },
-        domingo: {
-          passada: ["07:20", "09:20", "11:20", "16:20", "18:05", "19:35"],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //camocim a preá
-  {
-    topic: 12,
-    rota: "Camocim - Preá",
-    saidarota: "Camocim",
-    chegadarota: "Preá",
-    segundaasexta: {
-      saida: [
-        "05:00",
-        "06:00",
-        "07:00",
-        "08:15",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:00",
-      ],
-      chegada: [
-        "07:30",
-        "08:30",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:15",
-        "19:30",
-        "20:30",
-      ],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Preá",
-      saida: [
-        "05:00",
-        "06:00",
-        "07:00",
-        "08:15",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:00",
-      ],
-      chegada: [
-        "07:30",
-        "08:30",
-        "09:30",
-        "10:45",
-        "12:00",
-        "13:15",
-        "14:30",
-        "15:45",
-        "17:00",
-        "18:15",
-        "19:30",
-        "20:30",
-      ],
-    },
-    valor: 29.75,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Preá",
-      saida: ["05:00", "07:00", "09:30", "12:00", "14:30", "17:00"],
-      chegada: ["07:30", "09:30", "12:00", "14:30", "17:00", "19:30"],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Granja",
-        passada: [
-          "05:40",
-          "06:40",
-          "07:40",
-          "08:55",
-          "10:10",
-          "11:25",
-          "12:40",
-          "13:55",
-          "15:10",
-          "16:25",
-          "17:40",
-          "18:40",
-        ],
-        sabado: {
-          passada: [
-            "05:40",
-            "06:40",
-            "07:40",
-            "08:55",
-            "10:10",
-            "11:25",
-            "12:40",
-            "13:55",
-            "15:10",
-            "16:25",
-            "17:40",
-            "18:40",
-          ],
-        },
-        domingo: {
-          passada: ["05:40", "07:40", "10:10", "12:40", "15:10", "17:40"],
-        },
-      },
-      cidade2: {
-        nome: "Parazinho",
-        passada: [
-          "06:15",
-          "07:15",
-          "08:15",
-          "09:30",
-          "10:45",
-          "12:00",
-          "13:15",
-          "14:30",
-          "15:45",
-          "17:00",
-          "18:15",
-          "19:15",
-        ],
-        sabado: {
-          passada: [
-            "06:15",
-            "07:15",
-            "08:15",
-            "09:30",
-            "10:45",
-            "12:00",
-            "13:15",
-            "14:30",
-            "15:45",
-            "17:00",
-            "18:15",
-            "19:15",
-          ],
-        },
-        domingo: {
-          passada: ["06:15", "08:15", "10:45", "13:15", "15:45", "18:15"],
-        },
-      },
-      cidade3: {
-        nome: "Jijoca",
-        passada: [
-          "06:45",
-          "07:45",
-          "08:45",
-          "10:00",
-          "11:15",
-          "12:30",
-          "13:45",
-          "15:00",
-          "16:15",
-          "17:30",
-          "18:45",
-          "19:45",
-        ],
-        sabado: {
-          passada: [
-            "06:45",
-            "07:45",
-            "08:45",
-            "10:00",
-            "11:15",
-            "12:30",
-            "13:45",
-            "15:00",
-            "16:15",
-            "17:30",
-            "18:45",
-            "19:45",
-          ],
-        },
-        domingo: {
-          passada: ["06:45", "08:45", "11:15", "13:45", "16:15", "18:45"],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //outra rota
-  //araras a camocim
-  {
-    topic: 13,
-    rota: "Araras - Camocim",
-    saidarota: "Chapada",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: ["05:40"],
-      chegada: ["07:05"],
-    },
-    sabado: {
-      saidarota: "Araras",
-      chegadarota: "Camocim",
-      saida: [],
-      chegada: [],
-    },
-    valor: 19.10,
-    domingo: {
-      saidarota: "Araras",
-      chegadarota: "Camocim",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Araras",
-        passada: ["06:00"],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "Barroquinha",
-        passada: ["06:25"],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: ["06:45", "08:45", "11:15", "13:45", "16:15", "18:45"],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //camocim a araras
-  {
-    topic: 14,
-    rota: "Camocim - Araras",
-    saidarota: "Camocim",
-    chegadarota: "Chapada",
-    segundaasexta: {
-      saida: ["11:00"],
-      chegada: ["12:25"],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Araras",
-      saida: [],
-      chegada: [],
-    },
-    valor: 19.10,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Araras",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Barroquinha",
-        passada: ["11:40"],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "Araras",
-        passada: ["12:05"],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: ["06:45", "08:45", "11:15", "13:45", "16:15", "18:45"],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //camocim a tiangua
-  {
-    topic: 15,
-    rota: "Camocim - Tianguá",
-    saidarota: "Camocim",
-    chegadarota: "Tianguá",
-    segundaasexta: {
-      saida: ["05:45", "10:05"],
-      chegada: ["09:00", "13:15"],
-    },
-    sabado: {
-      saidarota: "Camocim",
-      chegadarota: "Tianguá",
-      saida: ["05:45", "10:05"],
-      chegada: ["09:00", "13:15"],
-    },
-    valor: 35.90,
-    domingo: {
-      saidarota: "Camocim",
-      chegadarota: "Tianguá",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Santa Terezinha",
-        passada: ["07:00", "11:20"],
-        sabado: {
-          passada: ["07:00", "11:20"],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "Viçosa",
-        passada: ["08:20", "12:40"],
-        sabado: {
-          passada: ["08:20", "12:40"],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-  //Tianguá a Camocicm
-  {
-    topic: 16,
-    rota: "Tianguá - Camocim",
-    saidarota: "Tianguá",
-    chegadarota: "Camocim",
-    segundaasexta: {
-      saida: ["06:00", "15:00"],
-      chegada: ["09:15", "18:15"],
-    },
-    sabado: {
-      saidarota: "Tianguá",
-      chegadarota: "Camocim",
-      saida: ["06:00", "12:00"],
-      chegada: ["09:15", "15:15"],
-    },
-    valor: 35.90,
-    domingo: {
-      saidarota: "Tianguá",
-      chegadarota: "Camocim",
-      saida: [],
-      chegada: [],
-    },
-    rotaadicional: {
-      cidade1: {
-        nome: "Viçosa",
-        passada: ["06:40", "15:40"],
-        sabado: {
-          passada: ["06:40", "12:40"],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade2: {
-        nome: "Santa Terezinha",
-        passada: ["07:50", "16:50"],
-        sabado: {
-          passada: ["07:50", "13:50"],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade3: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-      cidade4: {
-        nome: "",
-        passada: [],
-        sabado: {
-          passada: [],
-        },
-        domingo: {
-          passada: [],
-        },
-      },
-    },
-  },
-   //camocim a parnaiba
-   {
-   topic: 17,
-   rota: "Camocim - Parnaiba",
-   saidarota: "Camocim",
-   chegadarota: "Parnaiba",
-   segundaasexta: {
-     saida: [
-       "08:30"
-     ],
-     chegada: ["10:30"],
-   },
-   sabado: {
-     saidarota: "Camocim",
-     chegadarota: "Parnaiba",
-     saida: ["08:30"],
-     chegada: ["10:30"],
-   },
-   valor: 45,
-   domingo: {
-     saidarota: "Camocim",
-     chegadarota: "Parnaiba",
-     saida: [],
-     chegada: [],
-   },
-   rotaadicional: {
-     cidade1: {
-       nome: "",
-       passada: [],
-       sabado: {
-         passada: [],
-       },
-       domingo: {
-         passada: [],
-       },
-     },
-     cidade2: {
-       nome: "",
-       passada: [],
-       sabado: {
-         passada: [],
-       },
-       domingo: {
-         passada: [],
-       },
-     },
-     cidade3: {
-       nome: "",
-       passada: [],
-       sabado: {
-         passada: [],
-       },
-       domingo: {
-         passada: [],
-       },
-     },
-     cidade4: {
-       nome: "",
-       passada: [],
-       sabado: {
-         passada: [],
-       },
-       domingo: {
-         passada: [],
-       },
-     },
-   },
- },
- //fim camocim a parnaiba
- //parnaiba a camocim
- {
-  topic: 18,
-  rota: "Parnaiba - Camocim",
-  saidarota: "Parnaiba",
-  chegadarota: "Camocim",
-  segundaasexta: {
-    saida: ["12:30"],
-    chegada: ["14:30"],
-  },
-  sabado: {
-    saidarota: "Camocim",
-    chegadarota: "Parnaiba",
-    saida: ["12:00"],
-    chegada: ["14:00"],
-  },
-  valor: 45,
-  domingo: {
-    saidarota: "Camocim",
-    chegadarota: "Parnaiba",
-    saida: [],
-    chegada: [],
-  },
-  rotaadicional: {
-    cidade1: {
-      nome: "",
-      passada: [],
-      sabado: {
-        passada: [],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade2: {
-      nome: "",
-      passada: [],
-      sabado: {
-        passada: [],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade3: {
-      nome: "",
-      passada: [],
-      sabado: {
-        passada: [],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-    cidade4: {
-      nome: "",
-      passada: [],
-      sabado: {
-        passada: [],
-      },
-      domingo: {
-        passada: [],
-      },
-    },
-  },
-},
-//fim parnaiba a camocim
-];
+// Renderiza lista de rotas
+rotas.forEach((rota) => {
+  const itemRota = document.createElement("div");
+  itemRota.className = "rota-item";
 
-function optionHorarios() {
-  topics.forEach(function (topic) {
-    const li = document.createElement("li");
-    const button = document.createElement("button");
-    button.type = "submit";
-    button.value = topic.topic;
-    button.textContent = topic.rota;
-    button.id = "button";
-    
-    li.appendChild(button);
-    navbarHorario.appendChild(li);
-  });
-}
+  const botao = document.createElement("button");
+  botao.textContent = rota.nome;
+  botao.onclick = () => mostrarDetalhes(rota);
 
-function pegaHorario(item) {
-  if (item != 0) {
-    patrocinio.classList.add("hide");
-    main.classList.remove("hide");
-    saidaSemana.innerHTML = "";
-    chegadaSemana.innerHTML = "";
-    saidaSabado.innerHTML = "";
-    chegadaSabado.innerHTML = "";
-    saidaDomingo.innerHTML = "";
-    chegadaDomingo.innerHTML = "";
-    passadaSemana.innerHTML = "";
-    passadaSemana2.innerHTML = "";
-    passadaSemana3.innerHTML = "";
-    passadaSemana4.innerHTML = "";
-    passadaSabado.innerHTML = "";
-    passadaSabado2.innerHTML = "";
-    passadaSabado3.innerHTML = "";
-    passadaSabado4.innerHTML = "";
-    passadaDomingo.innerHTML = "";
-    passadaDomingo2.innerHTML = "";
-    passadaDomingo3.innerHTML = "";
-    passadaDomingo4.innerHTML = "";
-    seletor.classList.remove("hide");
-    topics.forEach((topic, index) => {
-      if (topic.topic === item) {
-        // trata a rota e valor
+  const preco = document.createElement("span");
+  preco.className = "preco";
+  preco.textContent = `R$ ${rota.preco.toFixed(2)}`;
 
-        valor.innerHTML = topic.valor.toLocaleString("pt-br", {
-          style: "currency",
-          currency: "BRL",
-        });
-        //fim do tratamento da rota e valor
-        checarHorariosSemana(topic);
-
-        if (topic.sabado.saida.length != 0) {
-          checarHorariosSabado(topic);
-        } else {
-          sabado.classList.add("hide");
-        }
-
-        if (topic.domingo.chegada.length != 0) {
-          checarHorariosDomingo(topic);
-        } else {
-          domingo.classList.add("hide");
-        }
-        //apartir daqui segue as rotas adicionais
-
-        //verifica se existem roda adicional  da cidade 1 na semana
-
-        if (topic.rotaadicional.cidade1.passada.length != 0) {
-          checaRotaAdicional(
-            passadaSemanaHide,
-            passaCidade,
-            passadaSemana,
-            topic.rotaadicional.cidade1
-          );
-        } else {
-          passadaSemanaHide.classList.add("hide");
-        }
-
-        //verifica se existem roda adicional da cidade 1 no sabado
-        if (topic.rotaadicional.cidade1.sabado.passada.length != 0) {
-          checaRotaAdicionalSabado(
-            passadaSabadoHide,
-            passaCidadeS,
-            passadaSabado,
-            topic.rotaadicional.cidade1
-          );
-        } else {
-          passadaSabadoHide.classList.add("hide");
-        }
-        //verifica se existem roda adicional da cidade 1 no domingo
-        if (topic.rotaadicional.cidade1.domingo.passada.length != 0) {
-          checaRotaAdicionalDomingo(
-            passadaDomingoHide,
-            passaCidadeD,
-            passadaDomingo,
-            topic.rotaadicional.cidade1
-          );
-        } else {
-          passadaDomingoHide.classList.add("hide");
-        }
-        //fim da rota adicional cidade  1
-        //separador
-        //verifica se existem roda adicional  da cidade 2 na semana
-        if (topic.rotaadicional.cidade2.passada.length != 0) {
-          checaRotaAdicional(
-            passadaSemanaHide2,
-            passaCidade2,
-            passadaSemana2,
-            topic.rotaadicional.cidade2
-          );
-        } else {
-          passadaSemanaHide2.classList.add("hide");
-        }
-        //verifica se existem roda adicional da cidade 2 no sabado
-        if (topic.rotaadicional.cidade2.sabado.passada.length != 0) {
-          checaRotaAdicionalSabado(
-            passadaSabadoHide2,
-            passaCidadeS2,
-            passadaSabado2,
-            topic.rotaadicional.cidade2
-          );
-        } else {
-          passadaSabadoHide2.classList.add("hide");
-        }
-        //verifica se existem roda adicional da cidade 2 no domingo
-        if (topic.rotaadicional.cidade2.domingo.passada.length != 0) {
-          checaRotaAdicionalDomingo(
-            passadaDomingoHide2,
-            passaCidadeD2,
-            passadaDomingo2,
-            topic.rotaadicional.cidade2
-          );
-        } else {
-          passadaDomingoHide2.classList.add("hide");
-        }
-        //fim da rota adicional cidade  2
-        //separador
-        //verifica se existem roda adicional  da cidade 3 na semana
-        if (topic.rotaadicional.cidade3.passada.length != 0) {
-          checaRotaAdicional(
-            passadaSemanaHide3,
-            passaCidade3,
-            passadaSemana3,
-            topic.rotaadicional.cidade3
-          );
-        } else {
-          passadaSemanaHide3.classList.add("hide");
-        }
-        //verifica se existem roda adicional da cidade 3 no sabado
-        if (topic.rotaadicional.cidade3.sabado.passada.length != 0) {
-          checaRotaAdicionalSabado(
-            passadaSabadoHide3,
-            passaCidadeS3,
-            passadaSabado3,
-            topic.rotaadicional.cidade3
-          );
-        } else {
-          passadaSabadoHide3.classList.add("hide");
-        }
-        //verifica se existem roda adicional da cidade 3 no domingo
-        if (topic.rotaadicional.cidade3.domingo.passada.length != 0) {
-          checaRotaAdicionalDomingo(
-            passadaDomingoHide3,
-            passaCidadeD3,
-            passadaDomingo3,
-            topic.rotaadicional.cidade3
-          );
-        } else {
-          passadaDomingoHide3.classList.add("hide");
-        }
-        //fim da rota adicional cidade  3
-        //separador
-        //verifica se existem roda adicional  da cidade 4 na semana
-        if (topic.rotaadicional.cidade4.passada.length != 0) {
-          checaRotaAdicional(
-            passadaSemanaHide4,
-            passaCidade4,
-            passadaSemana4,
-            topic.rotaadicional.cidade4
-          );
-        } else {
-          passadaSemanaHide4.classList.add("hide");
-        }
-        //verifica se existem roda adicional da cidade 4 no sabado
-        if (topic.rotaadicional.cidade4.sabado.passada.length != 0) {
-          checaRotaAdicionalSabado(
-            passadaSabadoHide4,
-            passaCidadeS4,
-            passadaSabado4,
-            topic.rotaadicional.cidade4
-          );
-        } else {
-          passadaSabadoHide4.classList.add("hide");
-        }
-        //verifica se existem roda adicional da cidade 4 no domingo
-        if (topic.rotaadicional.cidade4.domingo.passada.length != 0) {
-          checaRotaAdicionalDomingo(
-            passadaDomingoHide4,
-            passaCidadeD4,
-            passadaDomingo4,
-            topic.rotaadicional.cidade4
-          );
-        } else {
-          passadaDomingoHide4.classList.add("hide");
-        }
-        //fim da rota adicional cidade  4
-        //separador
-      }
-    });
-  } else {
-    seletor.classList.add("hide");
-    patrocinio.classList.remove("hide");
-    main.classList.add("hide");
-  }
-}
-
-optionHorarios();
-
-const form = document.getElementById("form");
-const button = document.getElementById("button");
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
- 
-
-   // O botão que disparou o submit está em `event.submitter` (modern browsers)
-  const botaoClicado = document.activeElement;
-
-  let item = parseInt(botaoClicado.value);
-  
-  pegaHorario(item);
+  itemRota.appendChild(botao);
+  itemRota.appendChild(preco);
+  listaRotas.appendChild(itemRota);
 });
 
-//função para prencher a tabela com os horarios
-//o argumento é a variavel da tag que manipula o dia
-//o argumento dia é o campo da lista referente a semana, sabado ou odmingo
-function checarHorariosSemana(topic) {
-  saidaRota.innerHTML = topic.saidarota;
-  chegadaRota.innerHTML = topic.chegadarota;
-  for (let i = 0; i < topic.segundaasexta.saida.length; i++) {
-    const span = document.createElement("li");
-    span.className = "saida-dia";
-    span.innerHTML = topic.segundaasexta.saida[i];
-    saidaSemana.appendChild(span);
+function mostrarDetalhes(rota) {
+  listaRotas.classList.add("hidden");
+  detalheRota.classList.remove("hidden");
+  tituloRota.innerHTML = `<h2>${rota.nome}</h2>`;
+  precoRota.textContent = `Preço: R$ ${rota.preco.toFixed(2)}`; // Mostra o preço
+  tabelasRota.innerHTML = "";
+
+  for (let tipo in rota.horarios) {
+    const horarios = rota.horarios[tipo];
+
+    // Verificar se há horários
+    if (horarios.length === 0) {
+      const aviso = document.createElement("p");
+      aviso.className = "aviso-sem-horario";
+      aviso.innerHTML = `
+  <svg width="20" height="20" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 8px;">
+    <path fill="#ff8f00" d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8a8 8 0 0 1 8-8a8 8 0 0 1 8 8a8 8 0 0 1-8 8z"/>
+  </svg>
+  Não há horários registrados para ${
+    tipo === "semana" ? "dias úteis" : tipo === "sabado" ? "sábado" : "domingo"
   }
-  for (let i = 0; i < topic.segundaasexta.chegada.length; i++) {
-    const span = document.createElement("li");
-    span.className = "chegada-dia";
-    span.innerHTML = topic.segundaasexta.chegada[i];
-    chegadaSemana.appendChild(span);
+`;
+      tabelasRota.appendChild(aviso);
+      continue;
+    }
+
+    const containerTabela = document.createElement("div");
+    containerTabela.className = "tabela-container";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent =
+      tipo === "semana"
+        ? "Segunda a Sexta"
+        : tipo === "sabado"
+        ? "Sábado"
+        : "Domingo";
+    containerTabela.appendChild(titulo);
+
+    // Criar tabela
+    const tabela = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+
+    // Cabeçalho
+    const trHead = document.createElement("tr");
+    rota.colunas.forEach((col) => {
+      const th = document.createElement("th");
+      th.textContent = col;
+      trHead.appendChild(th);
+    });
+    thead.appendChild(trHead);
+
+    // Corpo
+    horarios.forEach((linha) => {
+      const trBody = document.createElement("tr");
+      linha.forEach((item, index) => {
+        const td = document.createElement("td");
+        td.textContent = item;
+        // Destaca a primeira e última coluna (saída e chegada)
+        if (index === 0 || index === linha.length - 1) {
+          td.className = index === 0 ? "saida" : "chegada";
+        }
+        trBody.appendChild(td);
+      });
+      tbody.appendChild(trBody);
+    });
+
+    tabela.appendChild(thead);
+    tabela.appendChild(tbody);
+    containerTabela.appendChild(tabela);
+    tabelasRota.appendChild(containerTabela);
   }
 }
 
-function checarHorariosSabado(topic) {
-  saidaRotaS.innerHTML = topic.saidarota;
-  chegadaRotaS.innerHTML = topic.chegadarota;
-  sabado.classList.remove("hide");
-  for (let i = 0; i < topic.sabado.saida.length; i++) {
-    const span = document.createElement("li");
-    span.className = "saida-dia";
-    span.innerHTML = topic.sabado.saida[i];
-    saidaSabado.appendChild(span);
+// Botão de voltar
+btnVoltar.onclick = () => {
+  detalheRota.classList.add("hidden");
+  listaRotas.classList.remove("hidden");
+};
+
+btnVoltarBottom.onclick = () => {
+  detalheRota.classList.add("hidden");
+  listaRotas.classList.remove("hidden");
+};
+
+// Controle do Modal
+const modal = document.getElementById("termsModal");
+const btn = document.querySelector(".open-modal-btn");
+const span = document.querySelector(".close-modal");
+
+btn.onclick = function () {
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Desabilita scroll
+};
+
+span.onclick = function () {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // Habilita scroll
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
   }
-  for (let i = 0; i < topic.sabado.chegada.length; i++) {
-    const span = document.createElement("li");
-    span.className = "chegada-dia";
-    span.innerHTML = topic.sabado.chegada[i];
-    chegadaSabado.appendChild(span);
-  }
+};
+
+// Função para copiar chave PIX
+function copyPixKey() {
+  const pixKey = document.getElementById("pixKey");
+  const btn = document.querySelector(".copy-pix-btn");
+
+  navigator.clipboard
+    .writeText(pixKey.textContent)
+    .then(() => {
+      btn.classList.add("copied");
+      btn.innerHTML =
+        '<span class="tooltip">Copiado!<span class="tooltiptext">Chave PIX copiada</span></span>';
+
+      setTimeout(() => {
+        btn.classList.remove("copied");
+        btn.innerHTML =
+          '<span class="tooltip">Copiar chave PIX<span class="tooltiptext">Clique para copiar</span></span>';
+      }, 2000);
+    })
+    .catch((err) => {
+      console.error("Falha ao copiar: ", err);
+      btn.innerHTML =
+        '<span class="tooltip">Erro<span class="tooltiptext">Falha ao copiar</span></span>';
+    });
 }
 
-function checarHorariosDomingo(topic) {
-  saidaRotaD.innerHTML = topic.saidarota;
-  chegadaRotaD.innerHTML = topic.chegadarota;
-  domingo.classList.remove("hide");
-  for (let i = 0; i < topic.domingo.saida.length; i++) {
-    const span = document.createElement("li");
-    span.className = "saida-dia";
-    span.innerHTML = topic.domingo.saida[i];
-    saidaDomingo.appendChild(span);
-  }
-  for (let i = 0; i < topic.domingo.chegada.length; i++) {
-    const span = document.createElement("li");
-    span.className = "chegada-dia";
-    span.innerHTML = topic.domingo.chegada[i];
-    chegadaDomingo.appendChild(span);
-  }
+// Relógio dinâmico
+function atualizarRelogio() {
+  const agora = new Date();
+  const horas = agora.getHours().toString().padStart(2, "0");
+  const minutos = agora.getMinutes().toString().padStart(2, "0");
+  document.getElementById("clock").textContent = `${horas}:${minutos}`;
 }
 
-function checaRotaAdicional(dado1, dado2, dado3, topic) {
-  dado1.classList.remove("hide");
-  dado2.innerHTML = topic.nome;
-  for (let i = 0; i < topic.passada.length; i++) {
-    const span = document.createElement("li");
-    span.className = "saida-dia";
-    span.innerHTML = topic.passada[i];
-    dado3.appendChild(span);
-  }
-}
-function checaRotaAdicionalSabado(dado1, dado2, dado3, topic) {
-  dado1.classList.remove("hide");
-  dado2.innerHTML = topic.nome;
-  for (let i = 0; i < topic.sabado.passada.length; i++) {
-    const span = document.createElement("li");
-    span.className = "saida-dia";
-    span.innerHTML = topic.sabado.passada[i];
-    dado3.appendChild(span);
-  }
-}
-function checaRotaAdicionalDomingo(dado1, dado2, dado3, topic) {
-  dado1.classList.remove("hide");
-  dado2.innerHTML = topic.nome;
-  for (let i = 0; i < topic.domingo.passada.length; i++) {
-    const span = document.createElement("li");
-    span.className = "saida-dia";
-    span.innerHTML = topic.domingo.passada[i];
-    dado3.appendChild(span);
-  }
-}
+// Esconde o loader quando a página estiver totalmente carregada
+window.addEventListener("load", function () {
+  document.getElementById("simple-loader").style.display = "none";
+});
 
-//enviar contato no whatsapp
-function enviaMensagem() {
-  const texto = "olá, tenho interesse em patrocinar o projeto.";
-  const fone = "+5588996328842";
-  const message = encodeURIComponent(texto);
-
-  window.open(`https://wa.me/${fone}?text=${message}`, "_blank");
-}
-
-function mudaImagem() {
-  imgPatrocinador.src = imagensPatrocinador[imagemAtual];
-  imagemAtual = (imagemAtual + 1) % imagensPatrocinador.length;
-}
-
-setInterval(mudaImagem, 8000);
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   const select = document.getElementById('listaHorarios');
-//   const navbar = document.getElementById('navbar');
-//   const ul = document.createElement('ul');
-  
-//   ul.className = 'nav-list';
-  
-//   Array.from(select.options).forEach(option => {
-//     if (option.value) {
-//       const li = document.createElement('li');
-//       li.className = 'nav-item';
-      
-//       const a = document.createElement('a');
-//       a.href = option.value;
-//       a.textContent = option.text;
-      
-//       li.appendChild(a);
-//       ul.appendChild(li);
-//     }
-//   });
-  
-//   navbar.appendChild(ul);
-  
-//   // Opcional: esconder o select original
-//   // select.style.display = 'none';
-// });
+setInterval(atualizarRelogio, 1000);
+atualizarRelogio();
