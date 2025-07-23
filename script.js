@@ -753,6 +753,24 @@ function atualizarRelogio() {
   document.getElementById("clock").textContent = `${horas}:${minutos}`;
 }
 
+const slideshow = document.getElementById('patrocinador-100');
+const imagens = ['./src/camocar-1.jpg', './src/camocar-2.jpg'];
+imagens.forEach(img => {
+    new Image().src = img; // Força o navegador a baixar cada imagem
+});
+let indice = 0;
+
+function trocarImagem() {
+    slideshow.style.opacity = 0; // Desaparece
+    setTimeout(() => {
+        indice = (indice + 1) % imagens.length;
+        slideshow.src = imagens[indice];
+        slideshow.style.opacity = 1; // Reaparece
+    }, 500); // Tempo da transição (metade do intervalo)
+}
+
+setInterval(trocarImagem, 5000); // Troca a cada 1s
+
 // Esconde o loader quando a página estiver totalmente carregada
 window.addEventListener("load", function () {
   document.getElementById("simple-loader").style.display = "none";
