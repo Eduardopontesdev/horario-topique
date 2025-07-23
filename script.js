@@ -771,6 +771,25 @@ function trocarImagem() {
 
 setInterval(trocarImagem, 5000); // Troca a cada 1s
 
+
+
+//funçao responsavel por esconder a imagem apso 30 dias
+function ocultarDivApos30Dias(dataInicial) {
+            const div = document.getElementById('patrocinador-container');
+            const hoje = new Date();
+            const dataInicialObj = new Date(dataInicial);
+            const trintaDiasEmMs = 30 * 24 * 60 * 60 * 1000;
+
+            const diferenca = hoje.getTime() - dataInicialObj.getTime();
+
+            if (diferenca >= trintaDiasEmMs) {
+                div.style.display = 'none';
+            }
+        }
+
+        // Insira a data inicial no formato 'YYYY-MM-DD' ou 'MM/DD/YYYY'
+        ocultarDivApos30Dias('2025-06-24'); // Altere para sua data
+
 // Esconde o loader quando a página estiver totalmente carregada
 window.addEventListener("load", function () {
   document.getElementById("simple-loader").style.display = "none";
