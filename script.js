@@ -788,7 +788,7 @@ function ocultarDivApos30Dias(dataInicial) {
         }
 
         // Insira a data inicial no formato 'YYYY-MM-DD' ou 'MM/DD/YYYY'
-        ocultarDivApos30Dias('2025-06-24'); // Altere para sua data
+        ocultarDivApos30Dias('2025-07-24'); // Altere para sua data
 
 // Esconde o loader quando a página estiver totalmente carregada
 window.addEventListener("load", function () {
