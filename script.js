@@ -601,15 +601,27 @@ rotas.forEach((rota) => {
   itemRota.className = "rota-item";
 
   const botao = document.createElement("button");
-  botao.textContent = rota.nome;
+  botao.textContent = rota.nome + " 👈 clique abrir";
   botao.onclick = () => mostrarDetalhes(rota);
 
   const preco = document.createElement("span");
   preco.className = "preco";
   preco.textContent = `R$ ${rota.preco.toFixed(2)}`;
 
+  const divPatrocinador = document.createElement("div");
+  divPatrocinador.className = "patrocinador-container";
+  divPatrocinador.id = "patrocinador-container";
+
+  const imgPatrocinador = document.createElement("img");
+  imgPatrocinador.src = "./src/anunciante-top-50.png";
+  imgPatrocinador.alt = "logo do patrocinador";
+  imgPatrocinador.id = "patrocinador-50";
+
+  divPatrocinador.appendChild(imgPatrocinador);
+
   itemRota.appendChild(botao);
   itemRota.appendChild(preco);
+  itemRota.appendChild(divPatrocinador);
   listaRotas.appendChild(itemRota);
 });
 
@@ -753,42 +765,40 @@ function atualizarRelogio() {
   document.getElementById("clock").textContent = `${horas}:${minutos}`;
 }
 
-const slideshow = document.getElementById('patrocinador-100');
-const imagens = ['./src/camocar-1.jpg', './src/camocar-2.jpg'];
-imagens.forEach(img => {
-    new Image().src = img; // Força o navegador a baixar cada imagem
+const slideshow = document.getElementById("patrocinador-100");
+const imagens = ["./src/anunciante-top-100.png"];
+imagens.forEach((img) => {
+  new Image().src = img; // Força o navegador a baixar cada imagem
 });
 let indice = 0;
 
 function trocarImagem() {
-    slideshow.style.opacity = 0; // Desaparece
-    setTimeout(() => {
-        indice = (indice + 1) % imagens.length;
-        slideshow.src = imagens[indice];
-        slideshow.style.opacity = 1; // Reaparece
-    }, 500); // Tempo da transição (metade do intervalo)
+  slideshow.style.opacity = 0; // Desaparece
+  setTimeout(() => {
+    indice = (indice + 1) % imagens.length;
+    slideshow.src = imagens[indice];
+    slideshow.style.opacity = 1; // Reaparece
+  }, 500); // Tempo da transição (metade do intervalo)
 }
 
 setInterval(trocarImagem, 5000); // Troca a cada 1s
 
-
-
 //funçao responsavel por esconder a imagem apso 30 dias
 function ocultarDivApos30Dias(dataInicial) {
-            const div = document.getElementById('patrocinador-container');
-            const hoje = new Date();
-            const dataInicialObj = new Date(dataInicial);
-            const trintaDiasEmMs = 30 * 24 * 60 * 60 * 1000;
+  const div = document.getElementById("patrocinador-container");
+  const hoje = new Date();
+  const dataInicialObj = new Date(dataInicial);
+  const trintaDiasEmMs = 30 * 24 * 60 * 60 * 1000;
 
-            const diferenca = hoje.getTime() - dataInicialObj.getTime();
+  const diferenca = hoje.getTime() - dataInicialObj.getTime();
 
-            if (diferenca >= trintaDiasEmMs) {
-                div.style.display = 'none';
-            }
-        }
+  if (diferenca >= trintaDiasEmMs) {
+    div.style.display = "none";
+  }
+}
 
-        // Insira a data inicial no formato 'YYYY-MM-DD' ou 'MM/DD/YYYY'
-        ocultarDivApos30Dias('2025-07-24'); // Altere para sua data
+// Insira a data inicial no formato 'YYYY-MM-DD' ou 'MM/DD/YYYY'
+ocultarDivApos30Dias("2025-09-30"); // Altere para sua data
 
 // Esconde o loader quando a página estiver totalmente carregada
 window.addEventListener("load", function () {
