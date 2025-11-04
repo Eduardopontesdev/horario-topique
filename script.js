@@ -389,7 +389,7 @@ const rotas = [
   },
   {
     id: "prea-camocim",
-    nome: "Preá - Camocim",
+    nome: "Preá - Jijoca - Camocim",
     preco: 29.75,
     horarios: {
       semana: [
@@ -439,7 +439,7 @@ const rotas = [
   },
   {
     id: "camocim-prea",
-    nome: "Camocim - Preá",
+    nome: "Camocim - Jijoca - Preá",
     preco: 29.75,
     horarios: {
       semana: [
@@ -788,7 +788,7 @@ function ocultarDivApos30Dias(dataInicial) {
   const div = document.getElementById("patrocinador-container");
   const hoje = new Date();
   const dataInicialObj = new Date(dataInicial);
-  const trintaDiasEmMs = 30 * 24 * 60 * 60 * 1000;
+  const trintaDiasEmMs = 90 * 24 * 60 * 60 * 1000;
 
   const diferenca = hoje.getTime() - dataInicialObj.getTime();
 
@@ -798,7 +798,7 @@ function ocultarDivApos30Dias(dataInicial) {
 }
 
 // Insira a data inicial no formato 'YYYY-MM-DD' ou 'MM/DD/YYYY'
-ocultarDivApos30Dias("2025-09-30"); // Altere para sua data
+ocultarDivApos30Dias("2025-11-03"); // Altere para sua data
 
 // Esconde o loader quando a página estiver totalmente carregada
 window.addEventListener("load", function () {
